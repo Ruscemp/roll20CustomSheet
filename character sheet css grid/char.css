@@ -1,0 +1,268 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
+/* Google Fonts */
+
+/* Tabs */
+div.sheet-tab-content { display: none; }
+
+input.sheet-tab1:checked ~ .sheet-tab1,
+input.sheet-tab2:checked ~ .sheet-tab2,
+input.sheet-tab3:checked ~ .sheet-tab3,
+input.sheet-tab4:checked ~ .sheet-tab4,
+input.sheet-tab5:checked ~ .sheet-tab5 {
+    display: grid;
+}
+
+input.sheet-tab {
+    width: 18.5%;
+    height: 25px;
+    position: relative;
+    top: 12.5px;
+    left: 4px;
+    margin: -1.5px;
+    margin-right: 7.5px;
+    cursor: pointer;
+    z-index: 1;
+}
+input.sheet-tab:first-child{
+    margin-left: 10px;
+}
+input.sheet-tab::before {
+    content: attr(title);
+    display: inline-block;
+    background: #fff;
+    border: solid 5px #010101;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: 25px;
+}
+input.sheet-tab:checked::before {
+    border: solid 2.5px #010101;
+    border-top: solid 15px rgb(31, 0, 49);
+    border-bottom: none;
+    border-radius: 0px;
+    padding: 4px;
+    position: relative;
+    top: -12.5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+input.sheet-tab:not(:first-child)::before {
+    border-left: 2px, black;
+}
+div.sheet-tab-content {
+    border: 15px solid #010101;
+    border-top-color: #000;
+    margin: 2px 0 0 2px;
+    padding: 5px;
+    min-height: 220px;
+}
+/* Tabs */
+
+/* No class */
+input {
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+    box-shadow: none;
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    box-sizing: border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1e1;
+}
+::-webkit-scrollbar-thumb {
+    background: #5555555d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #888888d2;
+}
+/* No class */
+
+
+
+/* Containers */
+.sheet-container {
+    display: grid;
+    grid-template-columns: auto;
+    border: solid 2px black;
+    box-sizing: border-box;
+}
+.sheet-nav {
+    border: none;
+    grid-template-columns: auto auto auto auto auto;
+}
+.sheet-outer {
+    grid-column-end: span 5;
+    border: solid 20px black;
+    padding: 5px;
+    padding-top: 15px;
+    margin-top: 25px;
+}
+.sheet-SpellTableInner {
+    grid-template-columns: 14% 5% 11% 6% 4% 4% 40% 10% 6%;
+    border: none;
+}
+.sheet-SpellTableHeader {
+    grid-template-columns: 14% 16% 6% 8% 40% 10% 6%;
+    border: none;
+}
+/* Containers */
+
+/** Grid **/
+/* Grid-Header */
+.sheet-th {
+    border: 1px solid black;
+    background-color: black;
+    font-weight: none;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.sheet-th:not(:first-child){
+    border-left-color: white;
+}
+/* Grid-Header */
+
+/* Grid-Colspan */
+.sheet-colspan9 {
+    grid-column-end: span 9;
+}
+/* Grid-Colspan */
+
+/* Grid-Border */
+.sheet-borderall {
+    border: 2px solid black;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* Grid-Border */
+
+/* Grid-Elements */
+.sheet-element.sheet-element.sheet-element {
+    width: 95%;
+    box-sizing: border-box;
+}
+.sheet-element.sheet-element.sheet-element:not(:first-child) {
+    padding-left: 3px;
+}
+.sheet-item {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+/* Grid-Elements/Items */
+/** Grid **/
+
+/*** Spell-Specifics ***/
+.sheet-Spell_attribute{
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+    box-shadow: none;
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding: 0px;
+}
+
+.sheet-Spell_details {
+    font-size: 32px;
+    font-family: 'Marck Script', cursive;
+    color: #000000;
+    line-height: 1.1;
+    height: 3.65em;
+    text-align: center;
+    margin: 0px;
+    overflow-y: auto;
+    resize: none;
+    border-bottom: solid 7.5px black;
+}
+/*** Spell specifics ***/
+
+
+
+/* Bars */
+.sheet-Status div input {
+    background: transparent;
+    Border: none;
+    font-family: Lucida Handwriting;
+    text-shadow: 0 1px 0px #ffffff;
+}
+.sheet-Status_Bar1{
+    width: 49.3% !important;
+}
+.sheet-Status_center{
+    width: 1.4% !important;
+}
+.sheet-Status_Bar2{
+    width: 49.3% !important;
+}
+
+.sheet-Status_bar_left {
+    text-align: right;
+}
+.sheet-Status_bar_center {
+    text-align: center;
+}
+.sheet-Status_bar_right {
+    text-align: left;
+}
+
+input.Mana_bar[value="0"] ~ div.sheet-Mana_bar {
+    background: lightgray;
+}
+input.sheet-Mana_bar[value="10"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 90%, darkblue 10%);    
+}
+input.sheet-Mana_bar[value="20"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 80%, darkblue 20%);
+}
+input.sheet-Mana_bar[value="30"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 70%, darkblue 30%);
+}
+input.sheet-Mana_bar[value="40"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 60%, darkblue 40%);
+}
+input.sheet-Mana_bar[value="50"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 50%, darkblue 50%);
+}
+input.sheet-Mana_bar[value="60"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 40%, darkblue 60%);
+}
+input.sheet-Mana_bar[value="70"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 30%, darkblue 70%);
+}
+input.sheet-Mana_bar[value="80"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 20%, darkblue 80%);
+}
+input.sheet-Mana_bar[value="90"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray 10%, darkblue 90%);
+}
+input.sheet-Mana_bar[value="100"] ~ div.sheet-Mana_bar {
+    background: linear-gradient(to left, lightgray, darkblue 100%);
+}
+/* Bars */

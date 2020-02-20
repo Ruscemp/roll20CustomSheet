@@ -1,0 +1,207 @@
+<div class="nav">
+    <input type="radio" name="attr_tab" class="tab tab1" value="1" title="Character" checked="checked" />
+    <input type="radio" name="attr_tab" class="tab tab2" value="2" title="Health" />
+    <input type="radio" name="attr_tab" class="tab tab3" value="3" title="Quirks" />
+    <input type="radio" name="attr_tab" class="tab tab4" value="4" title="Skills" />
+    <input type="radio" name="attr_tab" class="tab tab5" value="5" title="Inventory" />
+    
+    
+    <div class="tab_content tab1 container">
+        <div class="container border char">
+            <div class="item container info">
+                <div class="container info1 border">
+                    <div class="Black Box item">NAME</div>
+                    <input type="text" name="attr_character_name" class="textbox Name item L">
+                    <div class="Black Box item">AGE</div>
+                    <input type="number" name="attr_character_age" class="textbox Age item L">
+                </div>
+                <div class="container info2  border">
+                    <div class="Black Box">RACE</div>
+                    <input type="text" name="attr_character_race" class="textbox Race L">
+                    <div class="Black Box">HEIGHT</div>
+                    <input type="number" name="attr_character_height" class="textbox Height L">
+                </div>
+                <div class="container info3 border">
+                    <div class="Black Box">GENDER</div>
+                    <input type="text" name="attr_character_gender" class="textbox Gender L">
+                    <div class="Black Box">WEIGHT</div>
+                    <input type="number" name="attr_character_weight" class="textbox Weight L">
+                </div>
+                <div class="container info4 border">
+                    <div class="Black Box">HP</div>
+                    <div class="container">
+                        <input type="hidden" name="attr_totalhp_bar" class="hidden HP_bar">
+                        <div class="HP_bar">
+                            <input type="number" name="attr_totalhp" class="Status_bar_left Status_bar">
+                            <span class="Status_bar_center Status_center">/</span>
+                            <input type="number" name="attr_totalhp_max" class="Status_bar_right Status_bar" >
+                        </div>
+                    </div>
+                    <div class="Black Box">MONEY</div>
+                    <input type="number" name="attr_character_money" class="textbox Money L">
+                </div>
+            </div>
+            <div class="item container apearance ">
+                <div class="item Black Box">APPEARANCE</div>
+                <div class="item container apearance1">
+                    <textarea class="borderall C" name="attr_char_appearance" placeholder="Unique features?"></textarea>
+                </div>
+            </div>
+            <div class="item container speed">
+                <div class="container speed1">
+                    <div class="Black Box item">INITIATIVE</div>
+                    <button type="roll" name="roll_ini" value="!power {{ --charid|@{character_id}  --emote|@{character_name} --format|encounter --name|Инициатива --Roll|[[ [XPND|NH|TRKR] 3d6-@{initiative_mod}]] }}"></button>
+                </div>
+                <div class="container speed2">
+                    <input type="number" name="attr_ini" class="textbox item" readonly>
+                </div>
+                <div class="container speed3">
+                    <div class="Black Box item">SPEED</div>
+                </div>
+                <div class="container speed4">
+                    <input type="number" name="attr_speed" class="textbox item" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="container Status">
+            <div class="container 3col">
+                <div class="Black Box StatusBarName">STAMINA</div>
+                <div class="Black Box StatusBarName">PSI</div>
+                <div class="Black Box StatusBarName">MANA</div>
+            </div>
+            <div class="container 3col StatusBars">
+                <div class="container">
+                    <input type="hidden" name="attr_totalst_bar" class="hidden ST_bar">
+                    <div class="ST_bar bar">
+                        <input type="number" name="attr_totalst" class="Status_bar_left Status_bar">
+                        <span class="Status_bar_center Status_center">/</span>
+                        <input type="number" name="attr_totalst_max" class="Status_bar_right Status_bar" >
+                    </div>
+                </div>
+                <div class="container">
+                    <input type="hidden" name="attr_totalps_bar" class="hidden PS_bar">
+                    <div class="PS_bar bar">
+                        <input type="number" name="attr_totalps" class="Status_bar_left Status_bar">
+                        <span class="Status_bar_center Status_center">/</span>
+                        <input type="number" name="attr_totalps_max" class="Status_bar_right Status_bar" >
+                    </div>
+                </div>
+                <div class="container">
+                    <input type="hidden" name="attr_totalmp_bar" class="hidden MP_bar">
+                    <div class="MP_bar bar">
+                        <input type="number" name="attr_totalmp" class="Status_bar_left Status_bar">
+                        <span class="Status_bar_center Status_center">/</span>
+                        <input type="number" name="attr_totalmp_max" class="Status_bar_right Status_bar" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container StatusPoints border">
+            <div class="container 3col">
+                <div class="Black Box">BODY</div>
+                <div class="Black Box">MIND</div>
+                <div class="Black Box">SOUL</div>
+            </div>
+            <div class="container 3col">
+                <input type="number" class="textbox C" name="attr_body">
+                <input type="number" class="textbox C" name="attr_mind">
+                <input type="number" class="textbox C" name="attr_soul">
+            </div>
+        </div>
+        <div class="container Stats">
+            <div class="container stats">
+                <div class="container border">
+                    <div class="container 3col">
+                        <div class="White Box border">SCORE</div>
+                        <div class="Black Box"></div>
+                        <div class="White Box border">XP</div>
+                    </div>
+                    <div class="container 3col">
+                        <input type="number" class="textbox" name="attr_str">
+                        <div class="Black Box container">
+                            <button class="" type="roll" name="roll_str_check" value="
+                                !power {{
+                                --name|Check
+                                --leftsub|Attribute
+                                --rightsub|Сила
+                                --?! ?{Вариант проверки|1d20+mod,0|3d6 vs score,1} -eq 0 !? Rolled|[[ [TXT] 1d20+@{str_mod} ]] 
+                                --?! ?{Вариант проверки|1d20+mod,0|3d6 vs score,1} -eq 1 !? hroll|[[ @{str}-([$Roll]3d6) ]] 
+                                --?! ?{Вариант проверки|1d20+mod,0|3d6 vs score,1} -eq 1 !? Rolled|[^Roll.base] vs @{str}! 
+                                --?! ?{Вариант проверки|1d20+mod,0|3d6 vs score,1} -eq 1 -and $Roll -gt 0!? Sucess| margin:[^Roll]! 
+                                --?! ?{Вариант проверки|1d20+mod,0|3d6 vs score,1} -eq 1 -and $Roll -eq 0 !? Result| depends on the target! 
+                                --?! ?{Вариант проверки|1d20+mod,0|3d6 vs score,1} -eq 1-and $Roll -lt 0 !? Failure| margin: [^Roll]!
+                                }}
+                                \n!modattr --silent --charid @{character_id} --str_xp|+1">
+                            </button>
+                            <div class="Black Box">Strength</div>
+                        </div>
+                        <input type="hidden" class="textbox" name="attr_str_mod" readonly>
+                        <input type="number" class="textbox" name="attr_str_xp" readonly>
+                    </div>
+                </div>
+                <div class="container"></div>
+                <div class="container border">
+                    
+                </div>
+                <div class="container"></div>
+                <div class="container border">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container Attacks border"></div>
+    </div>
+    <div class="tab_content tab2 container">
+        tab2
+    </div>
+    <div class="tab_content tab3 container">
+        tab3
+    </div>
+    <div class="tab_content tab4 container">
+        tab4
+    </div>
+    <div class="tab_content tab5 container">
+        tab5
+    </div>
+</div>
+
+
+
+
+<script type="text/worker">
+    const bars = ['totalhp','totalst','totalmp','totalps'];
+
+    bars.forEach(function (bar) {
+        on("sheet:opened change:"+ bar, function() {
+            getAttrs([bar, bar+"_max"], function(values) {
+                var current = parseFloat(values[bar], 10)||0;
+                var max = parseFloat(values[bar+'_max'], 10)||0;
+                var out = Math.floor(current / max * 100);
+                setAttrs({
+                    [bar+'_bar']: out,
+                    test1: current,
+                    test2: max,
+                    test3: out
+                });
+            });
+        });
+    });
+
+    const stats = ['str'];
+
+    stats.forEach(function (stat) {
+        on("change:"+ stat +'_xp'   , function() {
+            getAttrs([stat+"_xp", stat], function(values) {
+                var xp = parseInt(values[stat+'_xp'], 10)||0;
+                var attr= parseInt(values[stat], 10)||10;
+                var lvlup = Math.floor(attr*(1+attr)*0.91);
+                if(xp >= lvlup){
+                    setAttrs({ 
+                        [stat+'_xp']: (xp-lvlup),
+                        [stat]: (attr+1)
+                    });
+                }
+            });
+        });
+    });
+</script>

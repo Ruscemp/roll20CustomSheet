@@ -1,0 +1,857 @@
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="1" title="Персонаж" checked="checked" />
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab2" value="2" title="Магия" />
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab3" value="3" title="Вещи" />
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab4" value="4" title="Заметки" />
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab5" value="5" title="История" />
+
+<div class="sheet-spacer"></div>
+<div class="sheet-tab-content sheet-tab1">
+    <div class="sheet-3colrow">
+        <div class="sheet-col" style="width: 300px"> <!-- 1st column -->
+            <div class="sheet-colrow">
+                <table class="sheet-characterinfotable">
+                    <tr>
+                        <td class="sheet-blackbox">
+                            ИМЯ
+                        </td>
+                        <td style="width: 120px">
+                            <input class="sheet-basicinfotextbox" type="text" value="" name="attr_character_name" />
+                        </td>
+                        <td class="sheet-blackbox">
+                            РОД
+                        </td>
+                        <td>
+                            <input class="sheet-basicinfotextbox" type="text" name="attr_character_race" />
+                        </td>
+                    </tr>
+                </table>
+                <table class="sheet-characterinfotable">
+                    <tr>
+                        <td class="sheet-blackbox">
+                            ВОЗРОСТ
+                        </td>
+                        <td style="width: 50px">
+                            <input class="sheet-basicinfotextbox" type="text" value="" name="attr_age" />
+                        </td>
+                        <td class="sheet-blackbox">
+                            ПОЛ
+                        </td>
+                        <td>
+                            <input class="sheet-basicinfotextbox" type="text" value="" name="attr_gender" />
+                        </td>
+                    </tr>
+                </table>
+                <table class="sheet-characterinfotable">
+                    <tr>
+                        <td class="sheet-blackbox">
+                            ВЕС
+                        </td>
+                        <td style="width: 50px">
+                            <input class="sheet-basicinfotextbox" type="text" value="" name="attr_char_weight" />
+                        </td>
+                        <td class="sheet-blackbox">
+                            РОСТ
+                        </td>
+                        <td>
+                            <input class="sheet-basicinfotextbox" type="text" value="" name="attr_height" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="sheet-col" style="width: 325px">
+            <div class="sheet-colrow">
+                <table class="sheet-characterfeaturestable">
+                    <tr>
+                        <td class="sheet-blackbox_alternate">
+                            ВНЕШНОСТЬ
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea class="sheet-featurestextarea" name="attr_Features" placeholder="How you look like?"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="sheet-col" style="width: 125px">
+            <div class="sheet-colrow">
+                <table class="sheet_xptable">
+                    <tr>
+                        <td class="sheet-blackbox_alternate">
+                            Скорость
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" name="attr_speed" class="sheet-ini" value="floor(@{dex}*0.6 + @{cun}*0.4)" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sheet-blackbox_alternate">
+                            Инициатива
+                            <button type="roll" name="roll_initiative" value="!power {{ --charid|@{character_id}  --emote|@{character_name} кидает на инициативу! --format|encounter --name|Инициатива --Roll|[[ [NH|TRKR] 1d100+@{speed}]] }} \n!modattr --silent --charid @{character_id} --dex_xp|1 --cun_xp|1"></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <table>
+        </tr>
+        <tr>
+            <td class="sheet-blackbox_alternate2" width="33%" colspan="3">
+                ПСИ
+            </td>
+            <td class="sheet-blackbox_alternate2" width="33%" colspan="3">
+                МАНА
+            </td>
+            <td class="sheet-blackbox_alternate2" width="33%" colspan="3">
+                STAMINA
+            </td>
+        </tr>
+        <tr class="sheet-bars">
+            <td colspan="3">
+                <div class="sheet-Status-container">
+                    <input type="hidden" value="floor((@{TotalPsi})/(@{TotalPsi_max})*100)" name="attr_Status-Psi-Bar" class="sheet-hidden sheet-Psi-bar" disabled="true">
+                    <div class="sheet-Psi-bar">
+                        <input type="number" name="attr_TotalPsi" min="0" class="sheet-Status-bar-left sheet-Status-Bar1">
+                        <span>/</span>
+                        <input type="number" name="attr_TotalPsi_max" min="0" class="sheet-Status-bar sheet-Status-Bar1" value="floor(@{ten}*1.75 + @{cun}*1.5 + @{will}*1.375 + @{con}*0.25)" disabled>
+                    </div>
+                </div>
+            </td>
+            <td colspan="3">
+                <div class="sheet-Status-container">
+                    <input type="hidden" value="floor(@{TotalMana}/(@{TotalMaxMana})*100)" name="attr_Status-Mana-Bar" class="sheet-hidden sheet-Mana-bar" disabled="true">
+                    <div class="sheet-Mana-bar">
+                        <input type="number" name="attr_TotalMana" min="0" class="sheet-Status-bar-left sheet-Status-Bar1">
+                        <span>/</span>
+                        <input type="number" name="attr_TotalMaxMana" min="0" class="sheet-Status-bar-right sheet-Status-Bar1" value="floor(@{ten}*5 + @{will}*2.5 + @{con})" disabled>
+                    </div>
+                </div>
+            </td>
+            <td colspan="3">
+                <div class="sheet-Status-container">
+                    <input type="hidden" value="floor(@{TotalStamina}/(@{TotalStamina_max})*100)" name="attr_Status-Stamina-Bar" class="sheet-hidden sheet-Stamina-bar" disabled="true">
+                    <div class="sheet-Stamina-bar">
+                        <input type="number" name="attr_TotalStamina" min="0" class="sheet-Status-bar-left sheet-Status-Bar1">
+                        <span>/</span>
+                        <input type="number" name="attr_TotalStamina_max" min="0" class="sheet-Status-bar-right sheet-Status-Bar1" value="floor(@{con}*8 + @{will}*2.5 + @{str}*3.5)" disabled>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    
+    <div class="sheet-colrow" align="center">
+        <div class="sheet-col">
+            <table class="sheet-skilltable">
+                <tr>
+                    <td><h4>УРОВЕНЬ</h4></td>
+                    <td class="sheet-skill-name"></td>
+                    <td><h4>XP</h4></td>
+                    <td></td>
+                    <td><h4>УРОВЕНЬ</h4></td>
+                    <td class="sheet-skill-name"></td>
+                    <td><h4>XP</h4></td>
+                </tr>
+                <tr>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_str" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_Str" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Сила --Check|[[1d20+@{str}]] }} \n!modattr --silent --charid @{character_id} --str_xp|1"></button><br>Сила</td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_str_xp" class="sheet-numtwo"/></td>
+                    <td></td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_will" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_Will" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Воля --Check|[[1d20+@{will}]] }} \n!modattr --silent --charid @{character_id} --will_xp|1"></button><br>Воля</td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_will_xp" class="sheet-numtwo"/></td>
+                </tr>
+                <tr>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_dex" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_Dex" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Ловкость --Check|[[1d20+@{dex}]] }} \n!modattr --silent --charid @{character_id} --dex_xp|1"></button><br>Ловкость</td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_dex_xp" class="sheet-numtwo"/></td>
+                    <td></td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_cun" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_Cun" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Смекалка --Check|[[1d20+@{cun}]] }} \n!modattr --silent --charid @{character_id} --cun_xp|1"></button><br>Смекалка</td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_cun_xp" class="sheet-numtwo"/></td>
+                </tr>
+                <tr>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_con" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_Con" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Телосложение --Check|[[1d20+@{con}]] }} \n!modattr --silent --charid @{character_id} --con_xp|1"></button><br>Телосложение</td>         
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_con_xp" class="sheet-numtwo"/></td>
+                    <td></td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_ten" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_ten" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Упорство --Check|[[1d20+@{ten}]] }} \n!modattr --silent --charid @{character_id} --ten_xp|1"></button><br>Упорство</td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_ten_xp" class="sheet-numtwo" value=""/></td>
+                </tr>
+                <tr>
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_luck" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_Con" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Удача --Check|[[1d20+@{luck}]] }} \n!modattr --silent --charid @{character_id} --luck_xp|1"></button><br>Удача</td>         
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_luck_xp" class="sheet-numtwo"/></td>
+                    <td></td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_cha" class="sheet-numtwo"/></td>
+                    <td class="sheet-skill-name"><button type="roll" name="roll_cha" value="!power {{ --charid|@{character_id} --emote|@{character_name} проверяет себя! --format|atwill --name|Харизма --Check|[[1d20+@{cha}]] }} \n!modattr --silent --charid @{character_id} --cha_xp|1"></button><br>Харизма</td>
+                    <td class="sheet-skill-attribute"><input type="number" min="0" name="attr_cha_xp" class="sheet-numtwo" value=""/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="sheet-colrow" align="center">
+        <div class="sheet-col">
+            <table class="sheet-ammotable">
+                <tr>
+                    <td><h4>Эффекты/Статусы</h4></td>
+                    <td><h4>Время действия</h4></td>
+                </tr>
+            </table>
+            <fieldset class="repeating_status">
+                <table class="sheet-ammotable">
+                    <tr>
+                        <td><input type="text" name="attr_effect" class="sheet-ammotext"></td>
+                        <td>
+                            <input type="number" name="attr_effectDuration" class="sheet-ammotypetext">
+                            <select name="attr_DurType" class="sheet-ammotype-select"/>
+                                <option value="0" selected="selected">Turns</option>
+                                <option value="1">Seconds</option>
+                                <option value="2">Minuts</option>
+                                <option value="3">Hours</option>
+                                <option value="4">Days</option>
+                                <option value="5">Months</option>
+                                <option value="6">Years</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<div class="sheet-tab-content sheet-tab2">
+    <div class="sheet-Status-container">
+        <input type="hidden" value="floor(@{TotalMana}/(@{TotalMaxMana})*100)" name="attr_Status-Mana-Bar" class="sheet-hidden sheet-Mana-bar" disabled="true">
+        <div class="sheet-Mana-bar">
+            <input type="number" name="attr_TotalMana" class="sheet-Status-bar-left sheet-Status-Bar2">
+            <span>/</span>
+            <input type="number" name="attr_TotalMaxMana" class="sheet-Status-bar-right sheet-Status-Bar2" value="floor(@{ten}*5 + @{will}*2.5 + @{con})" disabled>
+        </div>
+    </div>
+
+    <div class="sheet-spacer"></div>
+    <div class="sheet-magic-tabs">
+        <input type="radio" name="attr_magictab" class="sheet-tab sheet-magictab1" value="1" title="Транфигурация" checked="checked" />
+        <input type="radio" name="attr_magictab" class="sheet-tab sheet-magictab2" value="2" title="Чары" />
+        <input type="radio" name="attr_magictab" class="sheet-tab sheet-magictab3" value="3" title="Артефакторика" />
+        <input type="radio" name="attr_magictab" class="sheet-tab sheet-magictab4" value="4" title="Зельеварение" />
+        <input type="radio" name="attr_magictab" class="sheet-tab sheet-magictab5" value="5" title="Другое" />
+
+        <div class="sheet-tab-content sheet-magictab1">
+            <div class="container">
+                <div class="container inner header">
+                    <div class="item Spell th">
+                        Spell
+                    </div>
+                    <div class="item Attribute th">
+                        Attribute
+                    </div>
+                    <div class="item Cost th">
+                        Cost
+                    </div>
+                    <div class="item Range th">
+                        Range
+                    </div>
+                    <div class="item Effect th">
+                        Effect
+                    </div>
+                    <div class="item Type th">
+                        Type
+                    </div>
+                    <div class="item T th">
+                        T
+                    </div>
+                </div>
+                <fieldset class="repeating_spells1">
+                    <div class="container inner">
+                        <div class="item Spell">
+                            <input type="text" class="element" name="attr_Spell_name" placeholder="Spell">
+                        </div>
+                        <div class="item Roll">
+                            <!--<button type='roll' value="[[ [roll1] 1d1]]" name='roll_Spell_roll'/></button>-->
+                        </div>
+                        <div class="item SAttribute">
+                            <select name="attr_Spell_attribute" class="Spell_attribute element">
+                                <option value="str">Сила</option>
+                                <option value="dex">Ловкость</option>
+                                <option value="con">Телосложение</option>
+                                <option value="will"selected>Воля</option>
+                                <option value="cun">Смекалка</option>
+                                <option value="ten">Упорство</option>
+                                <option value="luck">Удача</option>
+                                <option value="cha">Харизма</option>
+                            </select>
+                        </div>
+                        <div class="item Cost">
+                            <input type="number" class="element" name="attr_Cost" placeholder="0" title="Mana Cost" min="0"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Close_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Long_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item Effect">
+                            <input type="text" class="element" name="attr_Spell_Effect" placeholder="dices"/>
+                        </div>
+                        <div class="item Type">
+                            <input type="text" class="element" name="attr_Spell_Type" placeholder="-" title="Тип эффекта"/>
+                        </div>
+                        <div class="item T">
+                            <select class="element Spell_attribute" name="attr_Spell_Target" title="Targeting?">
+                                <option value="1">heal</option>
+                                <option value="0" selected></option>
+                                <option value="-1">damage</option>
+                            </select>
+                        </div>
+                        <div class="item colspan9">
+                            <textarea class="Spell_details borderall" name="attr_Spell_Details" placeholder="Spell Specs"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="sheet-tab-content sheet-magictab2">
+            <div class="container">
+                <div class="container inner header">
+                    <div class="item Spell th">
+                        Spell
+                    </div>
+                    <div class="item Attribute th">
+                        Attribute
+                    </div>
+                    <div class="item Cost th">
+                        Cost
+                    </div>
+                    <div class="item Range th">
+                        Range
+                    </div>
+                    <div class="item Effect th">
+                        Effect
+                    </div>
+                    <div class="item Type th">
+                        Type
+                    </div>
+                    <div class="item T th">
+                        T
+                    </div>
+                </div>
+                <fieldset class="repeating_spells2">
+                    <div class="container inner">
+                        <div class="item Spell">
+                            <input type="text" class="element" name="attr_Spell_name" placeholder="Spell">
+                        </div>
+                        <div class="item Roll">
+                            <!--<button type='roll' value="[[ [roll1] 1d1]]" name='roll_Spell_roll'/></button>-->
+                        </div>
+                        <div class="item SAttribute">
+                            <select name="attr_Spell_attribute" class="Spell_attribute element">
+                                <option value="str">Сила</option>
+                                <option value="dex">Ловкость</option>
+                                <option value="con">Телосложение</option>
+                                <option value="will"selected>Воля</option>
+                                <option value="cun">Смекалка</option>
+                                <option value="ten">Упорство</option>
+                                <option value="luck">Удача</option>
+                                <option value="cha">Харизма</option>
+                            </select>
+                        </div>
+                        <div class="item Cost">
+                            <input type="number" class="element" name="attr_Cost" placeholder="0" title="Mana Cost" min="0"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Close_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Long_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item Effect">
+                            <input type="text" class="element" name="attr_Spell_Effect" placeholder="dices"/>
+                        </div>
+                        <div class="item Type">
+                            <input type="text" class="element" name="attr_Spell_Type" placeholder="-" title="Тип эффекта"/>
+                        </div>
+                        <div class="item T">
+                            <select class="element Spell_attribute" name="attr_Spell_Target" title="Targeting?">
+                                <option value="1">heal</option>
+                                <option value="0" selected></option>
+                                <option value="-1">damage</option>
+                            </select>
+                        </div>
+                        <div class="item colspan9">
+                            <textarea class="Spell_details borderall" name="attr_Spell_Details" placeholder="Spell Specs"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="sheet-tab-content sheet-magictab3">
+            <div class="container">
+                <div class="container inner header">
+                    <div class="item Spell th">
+                        Spell
+                    </div>
+                    <div class="item Attribute th">
+                        Attribute
+                    </div>
+                    <div class="item Cost th">
+                        Cost
+                    </div>
+                    <div class="item Range th">
+                        Range
+                    </div>
+                    <div class="item Effect th">
+                        Effect
+                    </div>
+                    <div class="item Type th">
+                        Type
+                    </div>
+                    <div class="item T th">
+                        T
+                    </div>
+                </div>
+                <fieldset class="repeating_spells3">
+                    <div class="container inner">
+                        <div class="item Spell">
+                            <input type="text" class="element" name="attr_Spell_name" placeholder="Spell">
+                        </div>
+                        <div class="item Roll">
+                            <!--<button type='roll' value="[[ [roll1] 1d1]]" name='roll_Spell_roll'/></button>-->
+                        </div>
+                        <div class="item SAttribute">
+                            <select name="attr_Spell_attribute" class="Spell_attribute element">
+                                <option value="str">Сила</option>
+                                <option value="dex">Ловкость</option>
+                                <option value="con">Телосложение</option>
+                                <option value="will"selected>Воля</option>
+                                <option value="cun">Смекалка</option>
+                                <option value="ten">Упорство</option>
+                                <option value="luck">Удача</option>
+                                <option value="cha">Харизма</option>
+                            </select>
+                        </div>
+                        <div class="item Cost">
+                            <input type="number" class="element" name="attr_Cost" placeholder="0" title="Mana Cost" min="0"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Close_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Long_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item Effect">
+                            <input type="text" class="element" name="attr_Spell_Effect" placeholder="dices"/>
+                        </div>
+                        <div class="item Type">
+                            <input type="text" class="element" name="attr_Spell_Type" placeholder="-" title="Тип эффекта"/>
+                        </div>
+                        <div class="item T">
+                            <select class="element Spell_attribute" name="attr_Spell_Target" title="Targeting?">
+                                <option value="1">heal</option>
+                                <option value="0" selected></option>
+                                <option value="-1">damage</option>
+                            </select>
+                        </div>
+                        <div class="item colspan9">
+                            <textarea class="Spell_details borderall" name="attr_Spell_Details" placeholder="Spell Specs"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="sheet-tab-content sheet-magictab4">
+            <div class="container">
+                <div class="container inner header">
+                    <div class="item Spell th">
+                        Spell
+                    </div>
+                    <div class="item Attribute th">
+                        Attribute
+                    </div>
+                    <div class="item Cost th">
+                        Cost
+                    </div>
+                    <div class="item Range th">
+                        Range
+                    </div>
+                    <div class="item Effect th">
+                        Effect
+                    </div>
+                    <div class="item Type th">
+                        Type
+                    </div>
+                    <div class="item T th">
+                        T
+                    </div>
+                </div>
+                <fieldset class="repeating_spells4">
+                    <div class="container inner">
+                        <div class="item Spell">
+                            <input type="text" class="element" name="attr_Spell_name" placeholder="Spell">
+                        </div>
+                        <div class="item Roll">
+                            <!--<button type='roll' value="[[ [roll1] 1d1]]" name='roll_Spell_roll'/></button>-->
+                        </div>
+                        <div class="item SAttribute">
+                            <select name="attr_Spell_attribute" class="Spell_attribute element">
+                                <option value="str">Сила</option>
+                                <option value="dex">Ловкость</option>
+                                <option value="con">Телосложение</option>
+                                <option value="will"selected>Воля</option>
+                                <option value="cun">Смекалка</option>
+                                <option value="ten">Упорство</option>
+                                <option value="luck">Удача</option>
+                                <option value="cha">Харизма</option>
+                            </select>
+                        </div>
+                        <div class="item Cost">
+                            <input type="number" class="element" name="attr_Cost" placeholder="0" title="Mana Cost" min="0"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Close_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Long_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item Effect">
+                            <input type="text" class="element" name="attr_Spell_Effect" placeholder="dices"/>
+                        </div>
+                        <div class="item Type">
+                            <input type="text" class="element" name="attr_Spell_Type" placeholder="-" title="Тип эффекта"/>
+                        </div>
+                        <div class="item T">
+                            <select class="element Spell_attribute" name="attr_Spell_Target" title="Targeting?">
+                                <option value="1">heal</option>
+                                <option value="0" selected></option>
+                                <option value="-1">damage</option>
+                            </select>
+                        </div>
+                        <div class="item colspan9">
+                            <textarea class="Spell_details borderall" name="attr_Spell_Details" placeholder="Spell Specs"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="sheet-tab-content sheet-magictab5">
+            <div class="container">
+                <div class="container inner header">
+                    <div class="item Spell th">
+                        Spell
+                    </div>
+                    <div class="item Attribute th">
+                        Attribute
+                    </div>
+                    <div class="item Cost th">
+                        Cost
+                    </div>
+                    <div class="item Range th">
+                        Range
+                    </div>
+                    <div class="item Effect th">
+                        Effect
+                    </div>
+                    <div class="item Type th">
+                        Type
+                    </div>
+                    <div class="item T th">
+                        T
+                    </div>
+                </div>
+                <fieldset class="repeating_spells5">
+                    <div class="container inner">
+                        <div class="item Spell">
+                            <input type="text" class="element" name="attr_Spell_name" placeholder="Spell">
+                        </div>
+                        <div class="item Roll">
+                            <!--<button type='roll' value="[[ [roll1] 1d1]]" name='roll_Spell_roll'/></button>-->
+                        </div>
+                        <div class="item SAttribute">
+                            <select name="attr_Spell_attribute" class="Spell_attribute element">
+                                <option value="str">Сила</option>
+                                <option value="dex">Ловкость</option>
+                                <option value="con">Телосложение</option>
+                                <option value="will"selected>Воля</option>
+                                <option value="cun">Смекалка</option>
+                                <option value="ten">Упорство</option>
+                                <option value="luck">Удача</option>
+                                <option value="cha">Харизма</option>
+                            </select>
+                        </div>
+                        <div class="item Cost">
+                            <input type="number" class="element" name="attr_Cost" placeholder="0" title="Mana Cost" min="0"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Close_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Long_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item Effect">
+                            <input type="text" class="element" name="attr_Spell_Effect" placeholder="dices"/>
+                        </div>
+                        <div class="item Type">
+                            <input type="text" class="element" name="attr_Spell_Type" placeholder="-" title="Тип эффекта"/>
+                        </div>
+                        <div class="item T">
+                            <select class="element Spell_attribute" name="attr_Spell_Target" title="Targeting?">
+                                <option value="1">heal</option>
+                                <option value="0" selected></option>
+                                <option value="-1">damage</option>
+                            </select>
+                        </div>
+                        <div class="item colspan9">
+                            <textarea class="Spell_details borderall" name="attr_Spell_Details" placeholder="Spell Specs"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sheet-tab-content sheet-tab3">
+    
+    <div>
+        <table class="sheet-xptable">
+            <tr>
+                <td class="sheet-blackboxlarge">
+                    CURRENT WEIGHT
+                </td>
+                <td class="sheet-blackboxlarge">
+                    MAX WEIGHT
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" class="sheet-weight" name="attr_weight"  readonly/>
+                </td>
+                <td>
+                    <input type="number" class="sheet-weight" name="attr_weight_max" readonly/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table class="sheet-spelltable">
+            <tr>
+                <td class="blackbox_alternate" colspan="2">
+                    ITEM
+                </td>
+                <td class="blackbox_alternate" style="width: 70px">
+                    AMOUNT
+                </td>
+                <td class="blackbox_alternate" style="width: 100px">
+                    RANK
+                </td>
+                <td class="blackbox_alternate" >
+                    DESCRIPTION
+                </td>
+            </tr>
+        </table>
+        <fieldset class="repeating_items">
+            <table class="sheet-spelltable">
+            <tr>
+                <td colspan="2">
+                </td>
+                <td style="width: 70px">
+                </td>
+                <td style="width: 106px">
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="attr_item_name" class="sheet-itemtext"/>
+                </td>
+                <td>
+                    <input type="number" name="attr_item_amount" class="sheet-item-amount" min="0"/>
+                </td>
+                <td rowspan="2">
+                    <select name="attr_ItemRank" class="sheet-itemselect">
+                        <option value="Mundane"selected>Mundane</option>
+                        <option value="Uncommon">Uncommon</option>
+                        <option value="Rare">Rare</option>
+                        <option value="Epic">Epic</option>
+                        <option value="Unique">Unique</option>
+                        <option value="Mythic">Mythic</option>
+                    </select>
+                </td>
+                <td rowspan="2">
+                    <textarea name="attr_item_description" class="sheet-itemarea"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 75px" >
+                    <select name="attr_item_type" class="sheet-itemtypeselect">
+                        <option value="0"selected>Elsewhere</option>
+                        <option value="0.75">Equipped</option>
+                        <option value="1">Inventory</option>
+                    </select>
+                </td>
+                <td style="width: 85px">
+                    <h5>Weight per 1</h5>
+                    <input type="number" name="attr_item_weight" class="sheet-item-weight" step="0.01" min="0"/>kg
+                </td>
+                <td>
+                    <h5>Total Weight</h5>
+                    <input type="number" name="attr_item_weight_total" class="sheet-item-total-weight"  readonly />kg
+                </td>
+            </tr>
+        </table>
+        </fieldset>
+    </div>
+    
+</div>
+<div class="sheet-tab-content sheet-tab4">
+    <div class="colrow">
+        <textarea name="attr_notes" class="sheet-big-textarea"></textarea>
+    </div>
+</div>
+<div class="sheet-tab-content sheet-tab5">
+    <div class="colrow">
+        <textarea name="attr_history" class="sheet-big-textarea"></textarea>
+    </div>
+</div>
+
+
+
+<!--<div>
+    <table class="test">
+        <tr>
+            <td>
+                <input type="checkbox" class="sheet-arrow">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Stuff and Things</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="sheet-body">
+                    <input type="text" placeholder="Name" name="attr_name"><br>
+                    <input type="text" placeholder="Description" name="attr_description">
+                    <input type="number" min="0" max="20" value="0" name="attr_level"><br>
+                    <textarea placeholder="Fulltext" name="attr_bio"></textarea>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+</div>
+<div>
+    <input type="checkbox" class="sheet-arrow">
+    <h4>More Stuff</h4>
+    <div class="sheet-body">
+        <input type="text" placeholder="Name" name="attr_alternative-name"><br>
+        <input type="text" placeholder="Description" name="attr_alternative-description">
+        <input type="number" min="0" max="20" value="0" name="attr_alternative-level"><br>
+        <textarea placeholder="Fulltext" name="attr_alternative-bio"></textarea>
+    </div>
+</div>
+<div>
+    <input type="checkbox" class="sheet-arrow">
+    <h4>Other Things</h4>
+    <div class="sheet-body">
+        <input type="text" placeholder="Name" name="attr_class-name"><br>
+        <input type="text" placeholder="Description" name="attr_class-description">
+        <input type="number" min="0" max="20" value="0" name="attr_class-level"><br>
+        <textarea placeholder="Fulltext" name="class-bio"></textarea>
+    </div>
+</div>
+
+
+
+on("change:repeating_spells:spelltarget5", function() {
+    getAttrs(['repeating_spells_spelltarget5'], function(values) {
+        setAttrs({'repeating_spells_target_style5': values.repeating_spells_spelltarget5});
+    });
+});-->
+
+
+
+<!-- Scrips  -->
+<script type="text/worker">
+
+
+
+const repeatingSum = (destination, section, fields, multiplier = 1) => {
+    if (!Array.isArray(fields)) {fields = [fields]};
+    getSectionIDs(`repeating_${section}`, idArray => {
+        const attrArray = idArray.reduce( (m,id) => [...m, ...(fields.map(field => `repeating_${section}_${id}_${field}`))],[]);
+        getAttrs(attrArray, v => {
+            console.log("===== values of v: "+ JSON.stringify(v) +" =====");
+                 // getValue: if not a number, returns 1 if it is 'on' (checkbox), otherwise returns 0..
+            const getValue = (section, id,field) => parseFloat(v[`repeating_${section}_${id}_${field}`]) || (v[`repeating_${section}_${id}_${field}`] === 'on' ? 1 : 0); 
+            const sumTotal = idArray.reduce((total, id) => total + fields.reduce((subtotal,field) => subtotal * getValue(section, id,field),1),0);
+            setAttrs({[destination]: sumTotal * multiplier});    
+        });
+    });
+};
+
+
+
+const stats = ['str','dex','con','will','con','ten','luck','cha'];
+
+stats.forEach(function (stat) {
+    on("change:"+ stat +'_xp'   , function() {
+        getAttrs([stat+"_xp", stat], function(values) {
+            var xp = parseInt(values[stat+'_xp'], 10)||0;
+            var attr= parseInt(values[stat], 10)||10;
+            var lvlup = Math.floor(attr*(1+attr)*0.91);
+            if(xp >= lvlup){
+                setAttrs({ 
+                    [stat+'_xp']: (xp-lvlup),
+                    [stat]: (attr+1)
+                });
+            }
+        });
+    });
+});
+
+on("sheet:opened change:str change:con change:str change:will change: ten", function() {
+    getAttrs(["str", "will", "con", "ten"], function(values) {
+        var STR = parseInt(values.str, 10)||0;
+        var CON = parseInt(values.con, 10)||0;
+        var WILL = parseInt(values.will, 10)||0;
+        var TEN = parseInt(values.ten, 10)||0;
+        var Output = Math.floor((CON*3 + (WILL/4.5+TEN/5.5)*1.25 + STR*1.75)*STR/((CON+STR+WILL+TEN)/6+5));
+        setAttrs({
+            weight_max: Output
+        });
+    });
+});
+
+
+
+on("change:repeating_items:item_weight change:repeating_items:item_amount", function() {
+    getAttrs(["repeating_items_item_weight", "repeating_items_item_amount"], function(values) {
+        var w = parseFloat(values.repeating_items_item_weight, 10)||0;
+        var n = parseFloat(values.repeating_items_item_amount, 10)||0;
+        var Output = Math.floor(w*n*100)/100;
+        setAttrs({
+            repeating_items_item_weight_total: Output
+        });
+    });
+});
+
+on('change:repeating_items remove:repeating_items', function() {
+	repeatingSum("weight","items",["item_weight_total", "item_type"]);
+});
+
+</script>

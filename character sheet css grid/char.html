@@ -1,0 +1,109 @@
+<div class="nav">
+    <input type="radio" name="attr_tab" class="tab tab1" value="1" title="Персонаж" checked="checked" />
+    <input type="radio" name="attr_tab" class="tab tab2" value="2" title="Магия" />
+    <input type="radio" name="attr_tab" class="tab tab3" value="3" title="Вещи" />
+    <input type="radio" name="attr_tab" class="tab tab4" value="4" title="Заметки" />
+    <input type="radio" name="attr_tab" class="tab tab5" value="5" title="История" /> 
+    
+    
+    <div class="tab-content tab1">
+        tab1
+    </div>
+    <div class="container outer tab-content tab2">
+            <div class="status container">
+                <input type="hidden" value="floor( @{TotalMana}/(@{TotalMana_max})*10 )" name="attr_Status_Mana_Bar" class="hidden Mana_bar" disabled="true">
+                <div class="Mana_bar">
+                    <input type="number" name="attr_TotalMana" class="Status_bar_left Status_Bar2">
+                    <span class="Status_bar_center Status_center">/</span>
+                    <input type="number" name="attr_TotalMana_max" class="Status_bar_right Status_Bar2" >
+                </div>
+            </div>
+            <div class="container nav">
+    
+            </div>
+            <div class="container">
+                <div class="container SpellTableInner SpellTableHeader">
+                    <div class="item Spell th">
+                        Spell
+                    </div>
+                    <div class="item Attribute th">
+                        Attribute
+                    </div>
+                    <div class="item Cost th">
+                        Cost
+                    </div>
+                    <div class="item Range th">
+                        Range
+                    </div>
+                    <div class="item Effect th">
+                        Effect
+                    </div>
+                    <div class="item Type th">
+                        Type
+                    </div>
+                    <div class="item T th">
+                        T
+                    </div>
+                </div>
+                <fieldset class="repeating_spells">
+                    <div class="container SpellTableInner">
+                        <div class="item Spell">
+                            <input type="text" class="element" name="attr_Spell_name" placeholder="Spell">
+                        </div>
+                        <div class="item Roll">
+                            <button type='roll' value="[[ [roll1] 1d1]]" name='roll_Spell_roll'/></button>
+                        </div>
+                        <div class="item SAttribute">
+                            <select name="attr_Spell_attribute" class="Spell_attribute element">
+                                <option value="str">Сила</option>
+                                <option value="dex">Ловкость</option>
+                                <option value="con">Телосложение</option>
+                                <option value="will"selected>Воля</option>
+                                <option value="cun">Смекалка</option>
+                                <option value="ten">Упорство</option>
+                                <option value="luck">Удача</option>
+                                <option value="cha">Харизма</option>
+                            </select>
+                        </div>
+                        <div class="item Cost">
+                            <input type="number" class="element" name="attr_Cost" placeholder="0" title="Mana Cost" min="0"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Close_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item NRange">
+                            <input type="number" class="element SIN" name="attr_Spell_Long_Range" placeholder="0" title="Long Range"/>
+                        </div>
+                        <div class="item Effect">
+                            <input type="text" class="element" name="attr_Spell_Effect" placeholder="dices"/>
+                        </div>
+                        <div class="item Type">
+                            <input type="text" class="element" name="attr_Spell_Type" placeholder="-" title="Тип эффекта"/>
+                        </div>
+                        <div class="item T">
+                            <select class="element Spell_attribute" name="attr_Spell_Target" title="Targeting?">
+                                <option value="1">heal</option>
+                                <option value="0" selected></option>
+                                <option value="-1">damage</option>
+                            </select>
+                        </div>
+                        <div class="item colspan9">
+                            <textarea class="Spell_details borderall" name="attr_Spell_Details" placeholder="Spell Specs"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+    </div>
+    <div class="tab-content tab3">
+    
+    </div>
+    <div class="tab-content tab4">
+        tab3
+    </div>
+    <div class="tab-content tab5">
+        tab5
+    </div>
+</div>
+
+                                            
+<!-- value="floor(@{ten}*5 + @{will}*2.5 + @{con})" disabled -->

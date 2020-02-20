@@ -1,0 +1,2787 @@
+.charsheet {
+    font-family: Georgia;
+    background-color: white;
+    width: 870px;
+}
+
+p {
+    font-family: Georgia;
+}
+
+.sheet-colrow {
+    margin-top: 15px;
+}
+
+h6 {
+    color: #FF6A00;
+    text-shadow: 1px 1px 1px black, 2px 2px 2px white;
+}
+
+h4 {
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+span {
+    height: 100% !important;
+    font-size: 15px;
+    Border: none;
+    font-family: Lucida Handwriting;
+    text-shadow: 0 1px 0px #ffffff;
+}
+
+.sheet-spacer {
+    border-bottom: 1px solid #a8a8a8;
+    margin-bottom: 5px;
+    margin-top: 2px;
+}
+
+.charsheet textarea {
+    width: 99%;
+    background: none;
+    box-shadow: none;
+    font-size: 22px;
+    color: #000000;
+    font-family: Lucida Handwriting;;
+    resize: none;
+    border: none;
+    box-sizing: border-box;
+}
+.sheet-big-textarea {
+    width: 100%;
+    min-height: 200px;
+    font-size: 32px;
+    font-family: 'Courgette', cursive;
+    line-height: 1.2;
+    resize: vertical;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: -15px;
+}
+
+.charsheet tbody {
+   background: none;
+}
+
+.charsheet table {
+    width: 100%;
+    border: 2px solid black;
+}
+
+.charsheet td {
+   background: none;
+}
+
+/* -------------TAB CODE------------- */
+div.sheet-tab-content { display: none; }
+
+input.sheet-tab1:checked ~ div.sheet-tab1,
+input.sheet-tab2:checked ~ div.sheet-tab2,
+input.sheet-tab3:checked ~ div.sheet-tab3,
+input.sheet-tab4:checked ~ div.sheet-tab4,
+input.sheet-tab5:checked ~ div.sheet-tab5 {
+    display: block;
+}
+input.sheet-magictab1:checked ~ div.sheet-magictab1,
+input.sheet-magictab2:checked ~ div.sheet-magictab2,
+input.sheet-magictab3:checked ~ div.sheet-magictab3,
+input.sheet-magictab4:checked ~ div.sheet-magictab4,
+input.sheet-magictab5:checked ~ div.sheet-magictab5 {
+    display: block;
+}
+
+input.sheet-tab {
+    width: 150px;
+    height: 25px;
+    position: relative;
+    top: 12.5px;
+    left: 6px;
+    margin: -1.5px;
+    margin-right: 7.5px;
+    cursor: pointer;
+    z-index: 1;
+}
+input.sheet-magictab2, input.sheet-tab2, input.sheet-tab3 {
+    width: 100px;
+}
+input.sheet-magictab5, input.sheet-tab5 {
+    width: 125px;
+}
+input.sheet-tab:first-child{
+    margin-left: 10px;
+}
+
+input.sheet-tab::before {
+    content: attr(title);
+    display: inline-block;
+    background: #fff;
+    border: solid 5px #010101;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: 25px;
+}
+
+input.sheet-tab:checked::before {
+    border: solid 2.5px #010101;
+    border-top: solid 15px rgb(31, 0, 49);
+    border-bottom: none;
+    padding: 4px;
+    border-radius: 0px;
+    position: relative;
+    top: -12.5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+input.sheet-tab:not(:first-child)::before {
+    border-left: 2px, black;
+}
+
+div.sheet-tab-content {
+    border: 15px solid #010101;
+    border-top-color: #000;
+    margin: 2px 0 0 2px;
+    padding: 5px;
+    min-height: 220px;
+}
+/* -------------NAME, BACKGROUND, GENDER, AGE AND APPEARANCE------------- */
+.sheet-characterinfotable {
+    border: 2px solid black;
+    width: 300px;
+    margin-bottom: 5px;    
+}
+
+.sheet-characterinfotable td {
+    border: 2px solid black;
+}
+
+.sheet-basicinfotextbox {
+    width: 100%;
+    height: 31px !important;
+    background: none;
+    border-style:none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    font-size:13px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+.sheet-blackbox {
+    border: 2px solid black;
+    background-color: black;
+    font-weight: none;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    height: 25px;
+    padding: 3px;
+    font-family: Georgia;
+}
+
+.sheet-characterfeaturestable {
+    border: 2px solid black;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+.sheet-blackbox_alternate {
+    border: 2px solid black;
+    background-color: black;
+    font-weight: none;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 3px;
+}
+
+.sheet-featurestextarea {
+    width: 100%;
+    height: 80px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* -------------SKILLS------------- */
+.sheet-skilltable, .sheet-effects {
+    border: 3px solid #000000;
+    width: 95%;
+}
+
+.sheet-skilltable td {
+    border: 3px solid black;
+}
+.sheet-effects td {
+    border: 3px solid black;
+}
+
+.sheet-skilltable div, .sheet-effects div {
+    text-align: left;
+}
+.sheet-skill-name {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+}
+.sheet-skill-mod{
+    width: 80px !important;
+}
+.sheet-skill-attribute{
+    border: 3px solid #000000;
+    height: 25px;
+}
+
+.sheet-effectName{
+    width: 100% !important;
+    height: 100% !important;
+    text-align: left;
+}
+
+
+/* input type text */
+.sheet-skillvaluebox {
+    font-weight: bold;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 0px auto 0px auto; 
+    text-align: center;
+    font-size:50px;
+    width: 100%;
+    color: black;
+    font-family: Lucida Handwriting;
+}
+
+/* custom td for skill value in skill */
+.sheet-skillvalue {
+    width: 90px;
+}
+
+/* for textarea */
+.sheet-focustextarea {
+    width: 97%;
+    height: 50px;
+    text-align: justify;
+}
+
+/* CUSTOM FOCUS CHECKBOX TO CHECK STATE OF THE SKILLFOCUS  */
+/* Hide actual radio/checkbox */
+.sheet-focuscheck {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sheet-focuscheck + span::before
+{
+    margin-right: 4px;
+    border: solid 1px #a8a8a8;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    
+    -moz-box-shadow: 0 0 2px #ccc;
+    -webkit-box-shadow: 0 0 2px #ccc;
+    box-shadow: 0 0 2px #ccc;
+    
+    background: #f6f6f6;
+    background: -moz-radial-gradient(#f6f6f6, #dfdfdf);
+    background: -webkit-radial-gradient(#f6f6f6, #dfdfdf);
+    background: -ms-radial-gradient(#f6f6f6, #dfdfdf);
+    background: -o-radial-gradient(#f6f6f6, #dfdfdf);
+    background: radial-gradient(#f6f6f6, #dfdfdf);
+}
+
+/* Fake checkbox */
+.sheet-focuscheck + span::before
+{
+    content: "";
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.sheet-focuscheck:checked + span::before
+{
+    content: "✓";
+    color: green;
+    font-weight: bold;
+}
+
+/* div for textarea(focuses) and focuses checkboxes */
+.sheet-focusbox {
+    background: none;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align:center;
+    z-index:0;
+    position:relative;
+}
+
+.sheet-checkerpose {
+    background: none;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align:center;
+    padding:0;   
+    right: -6px;
+    top: 52px;
+    z-index: 2;
+    position: absolute;
+}
+.sheet-bananas {
+    background: none;
+    border: none;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align:center;
+    font-family: Georgia;
+    color: #000000;
+    padding: 0;
+    margin: 0px auto 0px auto;
+    right: 26px;
+    z-index: 1;
+    position: absolute;
+}
+/* --------- XP, CLASS, LEVEL --------- */
+
+.sheet-xptable {
+    border: 2px solid black;
+}
+
+.sheet-xptable td {
+    border: 2px solid black;
+}
+
+.sheet-blackboxlarge {
+    border: 2px solid black;
+    background-color: black;
+    font-weight: none;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    height: 25px;
+    padding: 1px;
+    font-family: Georgia;
+}
+
+.sheet-point-types {
+    width: 275px;
+    background: none;
+    border-style:none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    font-size:15px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+/* --------- SECONDARY STATS --------- */
+.sheet-2ndstattable {
+    border: 2px solid black;
+}
+
+.sheet-2ndstattable td {
+    border: 2px solid black;
+    text-align:center;
+}
+
+.sheet-2ndstatbox {
+   text-align:center;
+}
+
+.sheet-otherinput {
+    width: 50px;
+    background: none;
+    border-style:none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+.sheet-2nd_statstextbox {
+    width: 83px;
+    background: none;
+    border-style:none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    font-size: 40px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+.sheet-armortypetextarea {
+    width: 97%;
+    background: none;
+    border-style:none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+/* --------- WEAPONS TABLE --------- */
+.sheet-container {
+    min-height: 20px;
+    border-radius: 0px;
+    border: none;
+    background: none;
+    width: 100%;
+}
+
+.sheet-weapons-content {
+    overflow-y: auto;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.sheet-weaponscont {
+    min-height: 25px;
+    border: 1px solid black;
+}
+
+
+.sheet-weaponstable, .sheet-weaponstabledisplay {
+    border: 2px solid black;
+    width: 100.01%;
+    padding: 0px;
+}
+.sheet-weaponstable td, .sheet-weaponstabledisplay td{
+    text-align: center;
+}
+.sheet-weaponstabledisplay {
+    width: 100.15%;
+}
+
+.sheet-blackbox_alternate2, .sheet-blackbox_alternate3 {
+    border: 2px solid black;
+    background-color: black;
+    font-weight: none;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+.sheet-blackbox_alternate3 {
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.sheet-weaponnametext {
+    width: 125px;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px black;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+.sheet-spellwidth1 {
+    width: 132.5px;
+}
+.sheet-spellwidth2 {
+    width: 70px;
+}
+.sheet-spellwidth3 {
+    width: 45px;
+}
+.sheet-spellwidth4 {
+    width: 45px;
+}
+.sheet-spellwidth5 {
+    width: 280px;
+}
+.sheet-spellwidth6 {
+    width: 95px;
+}
+.sheet-spellwidth7 {
+    width: 40px;
+}
+.sheet-spelltarget {
+    position: relative;
+    top: 4px;
+    width: 40px;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+    box-shadow: none;
+    text-align: center;
+    font-size: 10px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+.sheet-hiddentext {
+    display: none;
+}
+
+input.sheet-targetW:checked ~ div.sheet-Check5_wt,
+input.sheet-targetT:checked ~ div.sheet-Check5_t {
+    display: block;
+}
+
+input.sheet-arrow {
+    float: left;
+}
+.sheet-test tr td div.sheet-body{
+    display: none;
+}
+
+.sheet-test tr td input.sheet-arrow:checked ~ .sheet-test tr td div.sheet-body {
+    display: inline;
+}
+
+/**/
+
+.sheet-wrapper {
+    text-transform: uppercase;
+    cursor: help;
+    position: absolute;
+    top: 214px;
+    text-align: center;
+    width: 40px;
+    -webkit-transform: translateZ(0); /* webkit flicker fix */
+    -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+  }
+  
+  .sheet-wrapper .sheet-tooltip {
+    background: #1496bb;
+    bottom: 100%;
+    color: #fff;
+    display: inline;
+    left: -25px;
+    margin-bottom: 15px;
+    opacity: 0;
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    width: 200%;
+    -webkit-transform: translateY(10px);
+       -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+         -o-transform: translateY(10px);
+            transform: translateY(10px);
+    -webkit-transition: all .25s ease-out;
+       -moz-transition: all .25s ease-out;
+        -ms-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+        -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+         -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  }
+  
+  /* This bridges the gap so you can mouse into the tooltip without it disappearing */
+  .sheet-wrapper .sheet-tooltip:before {
+    bottom: -20px;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }  
+  
+  /* CSS Triangles - see Trevor's post */
+  .sheet-wrapper .sheet-tooltip:after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid #1496bb 10px;
+    bottom: -10px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+  }
+    
+  .sheet-wrapper:hover .sheet-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+       -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+
+/**/
+
+
+.sheet-weaponatacktext {
+    width: 85px;
+    position: relative;
+    top: 3.5px;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+    box-shadow: none;
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+}
+
+.sheet-weaponrangetext, .sheet-manacost {
+    width: 35px;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+    box-shadow: none;
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+.sheet-weapondamagetext, .sheet-weapondamagedices {
+    width: 100px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 0px;
+    box-shadow: none;
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+.sheet-weapondamagedices {
+    width: 270px;
+}
+
+.sheet-weapondamagetype {
+    width: 80px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 0px;
+    box-shadow: none;
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+
+.sheet-borderdown {
+    border-bottom: 2px solid black;
+    font-size: 9px;
+}
+
+.sheet-borderall {
+    border: 2px solid black;
+    border-bottom: 5px solid black;
+    font-size: 9px;
+    padding: 0px;
+}
+
+.sheet-weaponstype {
+    height: 30px;
+    width: 458px;
+    text-align: left;
+}
+
+.sheet-weapondetails {
+    height: 3.1EM;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+}
+
+/* -------------RANGED WEAPONS SPECS------------- */
+.sheet-weaponnametext2 {
+    width: 150px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+.sheet-reloadtext {
+    height: 100%;
+    width: 85px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+}
+
+.sheet-weaponspecs {
+    width: 231px;
+    height: 100%;
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+/* -------------AMMO COUNTER------------- */
+.sheet-ammotable td {
+    border: 2px solid black;
+}
+
+.sheet-ammotext {
+    width: 650px !important;
+    height: 25px !important;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 20px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+.sheet-ammotypetext, .sheet-ammotype-select{
+    height: 25px !important;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    font-size: 17px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    margin: none !important;
+    padding: none !important;
+}
+.sheet-ammotypetext {
+    width: 60px !important;
+}
+.sheet-ammotype-select{
+    width: 70px !important;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* -------------SPELLS, CLASSPOWERS AND TALENTS------------- */
+.sheet-circularhome {
+    width:100%;
+    height:100%;
+    z-index:1;
+    position:relative;
+}
+
+.sheet-circulartextbox {
+   background: none;
+   border: none;
+   width: 70px;
+   height: 70px;
+   background-image: url('http://i.imgur.com/pEjJcho.png'); 
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   text-align:center;
+   padding:0;   
+   right: -10px;
+   top: -33px;
+   z-index:2;
+   position: absolute;
+}
+
+.sheet-circulartext {
+    font-weight: bold;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 0px auto 0px auto; 
+    text-align: center;
+    font-size:24px;
+    width: 70px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+    vertical-align: middle;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.sheet-circularp {
+    font-weight: bold;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 0px auto 0px auto; 
+    text-align: center;
+    font-size:14px;
+    color: #000000;
+    font-family: Georgia;
+    padding:0;
+    position:absolute;
+    left: 50%;
+    top: 110%;
+    transform: translate(-50%,-50%);
+}
+
+.sheet-spellbox {
+   width: 100%;
+   height: 100%;
+   border: 2px solid black;
+}
+
+.sheet-powerstext {
+    width: 475px;
+    height: 150px;
+    text-align: left;
+}
+
+/*------------------------ GRIMOIRE TAB CODES ------------------------*/
+.sheet-spelltable td {
+    border: 2px solid black;
+}
+.sheet-spelltable {
+    border: 2px solid black;
+    width: 100%;
+}
+
+.sheet-spelltext {
+    width:110px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 14px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-spellselect {
+    width: 100%;
+    font-size: 12px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+}
+.sheet-spellselect2 {
+    width: 90px;
+    font-size: 12px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+}
+.sheet-manatext {
+    width: 45px;
+    font-size: 12px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 14px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-timetext {
+    width:100px;
+    font-size:12px;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 14px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-natext {
+    width:30px;
+    font-size:12px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 14px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-vstext {
+    width:100%;
+    font-size:10px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 14px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-spelltext {
+    width:100%;
+    height: 40px;
+}
+/*------------------------ EQUIPS AND BACKGROUND TAB CODES ------------------------*/
+.sheet-talent {
+    height: 360px;
+    position: relative;
+}
+
+.sheet-lefter {
+    margin-left: 10px;
+}
+
+/* ------------- FAMILY AND TIES, LANGUAGE ------------- */
+.sheet-general {
+    width: 97%;
+}
+
+.sheet-concepttext {
+    height: 160px;
+    width: 100%;
+}
+
+.sheet-goalstextsmall {
+    height: 70px;
+}
+
+.sheet-goalstext {
+    height: 260px;
+}
+
+.sheet-tiestext {
+    height: 110px;
+}
+
+/* ------------- INVENTORY ------------- */
+.sheet-section {
+    position: relative;
+    min-height: 30px;
+    border-radius: 0px;
+    border: 2px solid black;
+    background: none;
+}
+
+.sheet-inventory {
+    height: 550px;
+    border: 2px solid black;
+    padding-bottom: 35px;
+    position: relative;
+}
+
+.sheet-inventory-content {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.sheet-InventoryName {
+    border: none;
+    width: 100%;
+    font-size: 10px;
+    font-family: Lucida Handwriting;
+    box-shadow: none;
+}
+.sheet-InventoryAmount {
+    border: none;
+    width: 50px;
+    font-size: 10px;
+    font-family: Lucida Handwriting;
+    box-shadow: none;
+}
+
+.sheet-invTable td {
+    border: 2px solid black;
+}
+
+.sheet-circularmoney {
+   background: none;
+   border: none;
+   width: 70px;
+   height: 70px;
+   background-image: url('http://i.imgur.com/pEjJcho.png'); 
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   text-align:center;
+}
+.sheet-circularmoneytext {
+    width: 65px;
+    background: none;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    border-color: black;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+/*------------------------ BODY TAB CODES ------------------------*/
+.sheet-Body {
+    background-image: url(https://i.imgur.com/RiM7q64.jpg);
+    width: 825px;
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.sheet-Full-Empty-col {
+    width: 145px;
+    Height: 990px;
+    border: none;
+}
+.sheet-Upper-Empty-col
+{
+    width: 160px;
+    Height: 175px;
+    border: none;
+}
+.sheet-Head-col {
+    width: 160px;
+    Height: 103px;
+    border: 1px solid black;
+    position: relative;
+    left: 10%;
+}
+.sheet-Throat-col {
+    width: 160px;
+    Height: 72px;
+    border: 1px solid black;
+    position: relative;
+    left: 10%;
+}
+.sheet-Upper-Left-Arm-col {
+    width: 100px;
+    Height: 240px;
+    border: 1px solid black;
+    float: right;
+    clear: both;
+}
+.sheet-Upper-Right-Arm-col {
+    width: 100px;
+    Height: 240px;
+    border: 1px solid black;
+}
+.sheet-Lower-Left-Arm-col {
+    width: 160px;
+    Height: 160px;
+    border: 1px solid black;
+    float: right;
+    clear: both;
+}
+.sheet-Lower-Right-Arm-col {
+    width: 160px;
+    Height: 160px;
+    border: 1px solid black;
+    float: right;
+}
+.sheet-Body-col {
+    width: 200px;
+    Height: 335px;
+    border: 1px solid black;
+}
+.sheet-Left-Leg-col {
+    width: 100px;
+    Height: 482px;
+    border: 1px solid black;
+    float: left;
+}
+.sheet-Right-Leg-col {
+    width: 100px;
+    Height: 482px;
+    border: 1px solid black;
+    float: right;
+}
+.sheet-Health {
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+}
+.sheet-HP {
+    Background: transparent;
+    text-align: center;
+    float: left;
+    color: #FF6A00;
+    text-shadow: 1px 1px 1px black, 2px 2px 2px white;
+    font-weight: bold;
+}
+
+div.sheet-Health-bar, div.sheet-Psi-bar, div.sheet-Mana-bar, div.sheet-Stamina-bar {
+    width: 99%;
+    height: 20px;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    border-radius: 25px;
+}
+
+
+.sheet-Status-container div input {
+    Height: 100% !important;
+    background: transparent;
+    Border: none;
+    font-family: Lucida Handwriting;
+    text-shadow: 0 1px 0px #ffffff;
+}
+
+.sheet-Status-Bar1{
+    width: 125px !important;
+}
+.sheet-Status-Bar2{
+    width: 400px !important;
+}
+.sheet-Status-bar-left {
+    text-align: right;
+}
+.sheet-Status-bar-right {
+    text-align: left;
+}
+input.sheet-Health-bar[value="0"] ~ div.sheet-Health-bar {
+    background: #404040;
+}
+input.sheet-Health-bar[value="1"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 1%, #404040 11%);    
+}
+input.sheet-Health-bar[value="2"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 2%, #404040 12%);    
+}
+input.sheet-Health-bar[value="3"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 3%, #404040 13%);    
+}
+input.sheet-Health-bar[value="4"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 4%, #404040 14%);    
+}
+input.sheet-Health-bar[value="5"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 5%, #404040 15%);    
+}
+input.sheet-Health-bar[value="6"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 6%, #404040 16%);    
+}
+input.sheet-Health-bar[value="7"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 7%, #404040 17%);    
+}
+input.sheet-Health-bar[value="8"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 8%, #404040 18%);    
+}
+input.sheet-Health-bar[value="9"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 9%, #404040 19%);    
+}
+input.sheet-Health-bar[value="10"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 10%, #404040 20%);    
+}
+input.sheet-Health-bar[value="11"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 11%, #404040 21%);    
+}
+input.sheet-Health-bar[value="12"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 12%, #404040 22%);    
+}
+input.sheet-Health-bar[value="13"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 13%, #404040 23%);    
+}
+input.sheet-Health-bar[value="14"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 14%, #404040 24%);    
+}
+input.sheet-Health-bar[value="15"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 15%, #404040 25%);    
+}
+input.sheet-Health-bar[value="16"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 16%, #404040 26%);    
+}
+input.sheet-Health-bar[value="17"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 17%, #404040 27%);    
+}
+input.sheet-Health-bar[value="18"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 18%, #404040 28%);    
+}
+input.sheet-Health-bar[value="19"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 19%, #404040 29%);    
+}
+input.sheet-Health-bar[value="20"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 20%, #404040 30%);  
+}
+input.sheet-Health-bar[value="21"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 21%, #404040 31%);    
+}
+input.sheet-Health-bar[value="22"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 22%, #404040 32%);    
+}
+input.sheet-Health-bar[value="23"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 23%, #404040 33%);    
+}
+input.sheet-Health-bar[value="24"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 24%, #404040 34%);    
+}
+input.sheet-Health-bar[value="25"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 25%, #404040 35%);    
+}
+input.sheet-Health-bar[value="26"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 26%, #404040 36%);    
+}
+input.sheet-Health-bar[value="27"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 27%, #404040 37%);    
+}
+input.sheet-Health-bar[value="28"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 28%, #404040 38%);    
+}
+input.sheet-Health-bar[value="29"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 29%, #404040 39%);    
+}
+input.sheet-Health-bar[value="30"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 30%, #404040 40%);  
+}
+input.sheet-Health-bar[value="31"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 31%, #404040 41%);    
+}
+input.sheet-Health-bar[value="32"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 32%, #404040 42%);    
+}
+input.sheet-Health-bar[value="33"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 33%, #404040 43%);    
+}
+input.sheet-Health-bar[value="34"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 34%, #404040 44%);    
+}
+input.sheet-Health-bar[value="35"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 35%, #404040 45%);    
+}
+input.sheet-Health-bar[value="36"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 36%, #404040 46%);    
+}
+input.sheet-Health-bar[value="37"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 37%, #404040 47%);    
+}
+input.sheet-Health-bar[value="38"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 38%, #404040 48%);    
+}
+input.sheet-Health-bar[value="39"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 39%, #404040 49%);    
+}
+input.sheet-Health-bar[value="40"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 40%, #404040 50%);  
+}
+input.sheet-Health-bar[value="41"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 41%, #404040 51%);    
+}
+input.sheet-Health-bar[value="42"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 42%, #404040 52%);    
+}
+input.sheet-Health-bar[value="43"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 43%, #404040 53%);    
+}
+input.sheet-Health-bar[value="44"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 44%, #404040 54%);    
+}
+input.sheet-Health-bar[value="45"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 45%, #404040 55%);    
+}
+input.sheet-Health-bar[value="46"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 46%, #404040 56%);    
+}
+input.sheet-Health-bar[value="47"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 47%, #404040 57%);    
+}
+input.sheet-Health-bar[value="48"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 48%, #404040 58%);    
+}
+input.sheet-Health-bar[value="49"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 49%, #404040 59%);    
+}
+input.sheet-Health-bar[value="50"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 50%, #404040 60%);  
+}
+input.sheet-Health-bar[value="51"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 51%, #404040 61%);    
+}
+input.sheet-Health-bar[value="52"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 52%, #404040 62%);    
+}
+input.sheet-Health-bar[value="53"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 53%, #404040 63%);    
+}
+input.sheet-Health-bar[value="54"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 54%, #404040 64%);    
+}
+input.sheet-Health-bar[value="55"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 55%, #404040 65%);    
+}
+input.sheet-Health-bar[value="56"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 56%, #404040 66%);    
+}
+input.sheet-Health-bar[value="57"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 57%, #404040 67%);    
+}
+input.sheet-Health-bar[value="58"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 58%, #404040 68%);    
+}
+input.sheet-Health-bar[value="59"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 59%, #404040 69%);    
+}
+input.sheet-Health-bar[value="60"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 60%, #404040 70%);  
+}
+input.sheet-Health-bar[value="61"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 61%, #404040 71%);    
+}
+input.sheet-Health-bar[value="62"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 62%, #404040 72%);    
+}
+input.sheet-Health-bar[value="63"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 63%, #404040 73%);    
+}
+input.sheet-Health-bar[value="64"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 64%, #404040 74%);    
+}
+input.sheet-Health-bar[value="65"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 65%, #404040 75%);    
+}
+input.sheet-Health-bar[value="66"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 66%, #404040 76%);    
+}
+input.sheet-Health-bar[value="67"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 67%, #404040 77%);    
+}
+input.sheet-Health-bar[value="68"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 68%, #404040 78%);    
+}
+input.sheet-Health-bar[value="69"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 69%, #404040 79%);    
+}
+input.sheet-Health-bar[value="70"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 70%, #404040 80%);  
+}
+input.sheet-Health-bar[value="71"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 71%, #404040 81%);    
+}
+input.sheet-Health-bar[value="72"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 72%, #404040 82%);    
+}
+input.sheet-Health-bar[value="73"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 73%, #404040 83%);    
+}
+input.sheet-Health-bar[value="74"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 74%, #404040 84%);    
+}
+input.sheet-Health-bar[value="75"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 75%, #404040 85%);    
+}
+input.sheet-Health-bar[value="76"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 76%, #404040 86%);    
+}
+input.sheet-Health-bar[value="77"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 77%, #404040 87%);    
+}
+input.sheet-Health-bar[value="78"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 78%, #404040 88%);    
+}
+input.sheet-Health-bar[value="79"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 79%, #404040 89%);    
+}
+input.sheet-Health-bar[value="80"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 80%, #404040 90%);  
+}
+input.sheet-Health-bar[value="81"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 81%, #404040 91%);    
+}
+input.sheet-Health-bar[value="82"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 82%, #404040 92%);    
+}
+input.sheet-Health-bar[value="83"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 83%, #404040 93%);    
+}
+input.sheet-Health-bar[value="84"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 84%, #404040 94%);    
+}
+input.sheet-Health-bar[value="85"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 85%, #404040 95%);    
+}
+input.sheet-Health-bar[value="86"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 86%, #404040 96%);    
+}
+input.sheet-Health-bar[value="87"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 87%, #404040 97%);    
+}
+input.sheet-Health-bar[value="88"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 88%, #404040 98%);    
+}
+input.sheet-Health-bar[value="89"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 89%, #404040 99%);    
+}
+input.sheet-Health-bar[value="90"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 90%, #404040 100%);  
+}
+input.sheet-Health-bar[value="91"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 91%, #404040 101%);    
+}
+input.sheet-Health-bar[value="92"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 92%, #404040 102%);    
+}
+input.sheet-Health-bar[value="93"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 93%, #404040 103%);    
+}
+input.sheet-Health-bar[value="94"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 94%, #404040 104%);    
+}
+input.sheet-Health-bar[value="95"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 95%, #404040 105%);    
+}
+input.sheet-Health-bar[value="96"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 96%, #404040 106%);    
+}
+input.sheet-Health-bar[value="97"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 97%, #404040 107%);    
+}
+input.sheet-Health-bar[value="98"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 98%, #404040 108%);    
+}
+input.sheet-Health-bar[value="99"] ~ div.sheet-Health-bar {
+    background: linear-gradient(to right, red 99%, #404040 109%);    
+}
+input.sheet-Health-bar[value="100"] ~ div.sheet-Health-bar {
+    background: red;
+    color: #404040;
+}
+input.sheet-Psi-bar[value="0"] ~ div.sheet-Psi-bar {
+    background: #404040;
+}
+input.sheet-Psi-bar[value="1"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 1%, #404040 11%);    
+}
+input.sheet-Psi-bar[value="2"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 2%, #404040 12%);    
+}
+input.sheet-Psi-bar[value="3"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 3%, #404040 13%);    
+}
+input.sheet-Psi-bar[value="4"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 4%, #404040 14%);    
+}
+input.sheet-Psi-bar[value="5"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 5%, #404040 15%);    
+}
+input.sheet-Psi-bar[value="6"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 6%, #404040 16%);    
+}
+input.sheet-Psi-bar[value="7"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 7%, #404040 17%);    
+}
+input.sheet-Psi-bar[value="8"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 8%, #404040 18%);    
+}
+input.sheet-Psi-bar[value="9"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 9%, #404040 19%);    
+}
+input.sheet-Psi-bar[value="10"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 10%, #404040 20%);    
+}
+input.sheet-Psi-bar[value="11"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 11%, #404040 21%);    
+}
+input.sheet-Psi-bar[value="12"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 12%, #404040 22%);    
+}
+input.sheet-Psi-bar[value="13"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 13%, #404040 23%);    
+}
+input.sheet-Psi-bar[value="14"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 14%, #404040 24%);    
+}
+input.sheet-Psi-bar[value="15"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 15%, #404040 25%);    
+}
+input.sheet-Psi-bar[value="16"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 16%, #404040 26%);    
+}
+input.sheet-Psi-bar[value="17"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 17%, #404040 27%);    
+}
+input.sheet-Psi-bar[value="18"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 18%, #404040 28%);    
+}
+input.sheet-Psi-bar[value="19"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 19%, #404040 29%);    
+}
+input.sheet-Psi-bar[value="20"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 20%, #404040 30%);  
+}
+input.sheet-Psi-bar[value="21"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 21%, #404040 31%);    
+}
+input.sheet-Psi-bar[value="22"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 22%, #404040 32%);    
+}
+input.sheet-Psi-bar[value="23"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 23%, #404040 33%);    
+}
+input.sheet-Psi-bar[value="24"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 24%, #404040 34%);    
+}
+input.sheet-Psi-bar[value="25"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 25%, #404040 35%);    
+}
+input.sheet-Psi-bar[value="26"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 26%, #404040 36%);    
+}
+input.sheet-Psi-bar[value="27"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 27%, #404040 37%);    
+}
+input.sheet-Psi-bar[value="28"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 28%, #404040 38%);    
+}
+input.sheet-Psi-bar[value="29"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 29%, #404040 39%);    
+}
+input.sheet-Psi-bar[value="30"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 30%, #404040 40%);  
+}
+input.sheet-Psi-bar[value="31"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 31%, #404040 41%);    
+}
+input.sheet-Psi-bar[value="32"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 32%, #404040 42%);    
+}
+input.sheet-Psi-bar[value="33"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 33%, #404040 43%);    
+}
+input.sheet-Psi-bar[value="34"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 34%, #404040 44%);    
+}
+input.sheet-Psi-bar[value="35"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 35%, #404040 45%);    
+}
+input.sheet-Psi-bar[value="36"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 36%, #404040 46%);    
+}
+input.sheet-Psi-bar[value="37"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 37%, #404040 47%);    
+}
+input.sheet-Psi-bar[value="38"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 38%, #404040 48%);    
+}
+input.sheet-Psi-bar[value="39"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 39%, #404040 49%);    
+}
+input.sheet-Psi-bar[value="40"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 40%, #404040 50%);  
+}
+input.sheet-Psi-bar[value="41"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 41%, #404040 51%);    
+}
+input.sheet-Psi-bar[value="42"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 42%, #404040 52%);    
+}
+input.sheet-Psi-bar[value="43"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 43%, #404040 53%);    
+}
+input.sheet-Psi-bar[value="44"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 44%, #404040 54%);    
+}
+input.sheet-Psi-bar[value="45"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 45%, #404040 55%);    
+}
+input.sheet-Psi-bar[value="46"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 46%, #404040 56%);    
+}
+input.sheet-Psi-bar[value="47"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 47%, #404040 57%);    
+}
+input.sheet-Psi-bar[value="48"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 48%, #404040 58%);    
+}
+input.sheet-Psi-bar[value="49"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 49%, #404040 59%);    
+}
+input.sheet-Psi-bar[value="50"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 50%, #404040 60%);  
+}
+input.sheet-Psi-bar[value="51"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 51%, #404040 61%);    
+}
+input.sheet-Psi-bar[value="52"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 52%, #404040 62%);    
+}
+input.sheet-Psi-bar[value="53"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 53%, #404040 63%);    
+}
+input.sheet-Psi-bar[value="54"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 54%, #404040 64%);    
+}
+input.sheet-Psi-bar[value="55"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 55%, #404040 65%);    
+}
+input.sheet-Psi-bar[value="56"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 56%, #404040 66%);    
+}
+input.sheet-Psi-bar[value="57"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 57%, #404040 67%);    
+}
+input.sheet-Psi-bar[value="58"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 58%, #404040 68%);    
+}
+input.sheet-Psi-bar[value="59"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 59%, #404040 69%);    
+}
+input.sheet-Psi-bar[value="60"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 60%, #404040 70%);  
+}
+input.sheet-Psi-bar[value="61"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 61%, #404040 71%);    
+}
+input.sheet-Psi-bar[value="62"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 62%, #404040 72%);    
+}
+input.sheet-Psi-bar[value="63"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 63%, #404040 73%);    
+}
+input.sheet-Psi-bar[value="64"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 64%, #404040 74%);    
+}
+input.sheet-Psi-bar[value="65"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 65%, #404040 75%);    
+}
+input.sheet-Psi-bar[value="66"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 66%, #404040 76%);    
+}
+input.sheet-Psi-bar[value="67"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 67%, #404040 77%);    
+}
+input.sheet-Psi-bar[value="68"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 68%, #404040 78%);    
+}
+input.sheet-Psi-bar[value="69"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 69%, #404040 79%);    
+}
+input.sheet-Psi-bar[value="70"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 70%, #404040 80%);  
+}
+input.sheet-Psi-bar[value="71"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 71%, #404040 81%);    
+}
+input.sheet-Psi-bar[value="72"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 72%, #404040 82%);    
+}
+input.sheet-Psi-bar[value="73"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 73%, #404040 83%);    
+}
+input.sheet-Psi-bar[value="74"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 74%, #404040 84%);    
+}
+input.sheet-Psi-bar[value="75"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 75%, #404040 85%);    
+}
+input.sheet-Psi-bar[value="76"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 76%, #404040 86%);    
+}
+input.sheet-Psi-bar[value="77"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 77%, #404040 87%);    
+}
+input.sheet-Psi-bar[value="78"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 78%, #404040 88%);    
+}
+input.sheet-Psi-bar[value="79"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 79%, #404040 89%);    
+}
+input.sheet-Psi-bar[value="80"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 80%, #404040 90%);  
+}
+input.sheet-Psi-bar[value="81"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 81%, #404040 91%);    
+}
+input.sheet-Psi-bar[value="82"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 82%, #404040 92%);    
+}
+input.sheet-Psi-bar[value="83"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 83%, #404040 93%);    
+}
+input.sheet-Psi-bar[value="84"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 84%, #404040 94%);    
+}
+input.sheet-Psi-bar[value="85"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 85%, #404040 95%);    
+}
+input.sheet-Psi-bar[value="86"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 86%, #404040 96%);    
+}
+input.sheet-Psi-bar[value="87"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 87%, #404040 97%);    
+}
+input.sheet-Psi-bar[value="88"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 88%, #404040 98%);    
+}
+input.sheet-Psi-bar[value="89"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 89%, #404040 99%);    
+}
+input.sheet-Psi-bar[value="90"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 90%, #404040 100%);  
+}
+input.sheet-Psi-bar[value="91"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 91%, #404040 101%);    
+}
+input.sheet-Psi-bar[value="92"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 92%, #404040 102%);    
+}
+input.sheet-Psi-bar[value="93"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 93%, #404040 103%);    
+}
+input.sheet-Psi-bar[value="94"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 94%, #404040 104%);    
+}
+input.sheet-Psi-bar[value="95"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 95%, #404040 105%);    
+}
+input.sheet-Psi-bar[value="96"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 96%, #404040 106%);    
+}
+input.sheet-Psi-bar[value="97"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 97%, #404040 107%);    
+}
+input.sheet-Psi-bar[value="98"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 98%, #404040 108%);    
+}
+input.sheet-Psi-bar[value="99"] ~ div.sheet-Psi-bar {
+    background: linear-gradient(to right, #00ffff 99%, #404040 109%);    
+}
+input.sheet-Psi-bar[value="100"] ~ div.sheet-Psi-bar {
+    background: #00ffff;
+    color: #404040;
+}
+input.sheet-Mana-bar[value="0"] ~ div.sheet-Mana-bar {
+    background: #404040;
+}
+input.sheet-Mana-bar[value="1"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 1%, #404040 11%);    
+}
+input.sheet-Mana-bar[value="2"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 2%, #404040 12%);    
+}
+input.sheet-Mana-bar[value="3"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 3%, #404040 13%);    
+}
+input.sheet-Mana-bar[value="4"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 4%, #404040 14%);    
+}
+input.sheet-Mana-bar[value="5"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 5%, #404040 15%);    
+}
+input.sheet-Mana-bar[value="6"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 6%, #404040 16%);    
+}
+input.sheet-Mana-bar[value="7"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 7%, #404040 17%);    
+}
+input.sheet-Mana-bar[value="8"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 8%, #404040 18%);    
+}
+input.sheet-Mana-bar[value="9"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 9%, #404040 19%);    
+}
+input.sheet-Mana-bar[value="10"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 10%, #404040 20%);    
+}
+input.sheet-Mana-bar[value="11"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 11%, #404040 21%);    
+}
+input.sheet-Mana-bar[value="12"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 12%, #404040 22%);    
+}
+input.sheet-Mana-bar[value="13"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 13%, #404040 23%);    
+}
+input.sheet-Mana-bar[value="14"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 14%, #404040 24%);    
+}
+input.sheet-Mana-bar[value="15"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 15%, #404040 25%);    
+}
+input.sheet-Mana-bar[value="16"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 16%, #404040 26%);    
+}
+input.sheet-Mana-bar[value="17"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 17%, #404040 27%);    
+}
+input.sheet-Mana-bar[value="18"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 18%, #404040 28%);    
+}
+input.sheet-Mana-bar[value="19"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 19%, #404040 29%);    
+}
+input.sheet-Mana-bar[value="20"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 20%, #404040 30%);  
+}
+input.sheet-Mana-bar[value="21"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 21%, #404040 31%);    
+}
+input.sheet-Mana-bar[value="22"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 22%, #404040 32%);    
+}
+input.sheet-Mana-bar[value="23"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 23%, #404040 33%);    
+}
+input.sheet-Mana-bar[value="24"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 24%, #404040 34%);    
+}
+input.sheet-Mana-bar[value="25"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 25%, #404040 35%);    
+}
+input.sheet-Mana-bar[value="26"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 26%, #404040 36%);    
+}
+input.sheet-Mana-bar[value="27"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 27%, #404040 37%);    
+}
+input.sheet-Mana-bar[value="28"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 28%, #404040 38%);    
+}
+input.sheet-Mana-bar[value="29"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 29%, #404040 39%);    
+}
+input.sheet-Mana-bar[value="30"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 30%, #404040 40%);  
+}
+input.sheet-Mana-bar[value="31"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 31%, #404040 41%);    
+}
+input.sheet-Mana-bar[value="32"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 32%, #404040 42%);    
+}
+input.sheet-Mana-bar[value="33"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 33%, #404040 43%);    
+}
+input.sheet-Mana-bar[value="34"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 34%, #404040 44%);    
+}
+input.sheet-Mana-bar[value="35"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 35%, #404040 45%);    
+}
+input.sheet-Mana-bar[value="36"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 36%, #404040 46%);    
+}
+input.sheet-Mana-bar[value="37"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 37%, #404040 47%);    
+}
+input.sheet-Mana-bar[value="38"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 38%, #404040 48%);    
+}
+input.sheet-Mana-bar[value="39"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 39%, #404040 49%);    
+}
+input.sheet-Mana-bar[value="40"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 40%, #404040 50%);  
+}
+input.sheet-Mana-bar[value="41"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 41%, #404040 51%);    
+}
+input.sheet-Mana-bar[value="42"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 42%, #404040 52%);    
+}
+input.sheet-Mana-bar[value="43"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 43%, #404040 53%);    
+}
+input.sheet-Mana-bar[value="44"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 44%, #404040 54%);    
+}
+input.sheet-Mana-bar[value="45"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 45%, #404040 55%);    
+}
+input.sheet-Mana-bar[value="46"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 46%, #404040 56%);    
+}
+input.sheet-Mana-bar[value="47"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 47%, #404040 57%);    
+}
+input.sheet-Mana-bar[value="48"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 48%, #404040 58%);    
+}
+input.sheet-Mana-bar[value="49"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 49%, #404040 59%);    
+}
+input.sheet-Mana-bar[value="50"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 50%, #404040 60%);  
+}
+input.sheet-Mana-bar[value="51"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 51%, #404040 61%);    
+}
+input.sheet-Mana-bar[value="52"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 52%, #404040 62%);    
+}
+input.sheet-Mana-bar[value="53"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 53%, #404040 63%);    
+}
+input.sheet-Mana-bar[value="54"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 54%, #404040 64%);    
+}
+input.sheet-Mana-bar[value="55"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 55%, #404040 65%);    
+}
+input.sheet-Mana-bar[value="56"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 56%, #404040 66%);    
+}
+input.sheet-Mana-bar[value="57"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 57%, #404040 67%);    
+}
+input.sheet-Mana-bar[value="58"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 58%, #404040 68%);    
+}
+input.sheet-Mana-bar[value="59"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 59%, #404040 69%);    
+}
+input.sheet-Mana-bar[value="60"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 60%, #404040 70%);  
+}
+input.sheet-Mana-bar[value="61"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 61%, #404040 71%);    
+}
+input.sheet-Mana-bar[value="62"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 62%, #404040 72%);    
+}
+input.sheet-Mana-bar[value="63"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 63%, #404040 73%);    
+}
+input.sheet-Mana-bar[value="64"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 64%, #404040 74%);    
+}
+input.sheet-Mana-bar[value="65"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 65%, #404040 75%);    
+}
+input.sheet-Mana-bar[value="66"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 66%, #404040 76%);    
+}
+input.sheet-Mana-bar[value="67"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 67%, #404040 77%);    
+}
+input.sheet-Mana-bar[value="68"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 68%, #404040 78%);    
+}
+input.sheet-Mana-bar[value="69"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 69%, #404040 79%);    
+}
+input.sheet-Mana-bar[value="70"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 70%, #404040 80%);  
+}
+input.sheet-Mana-bar[value="71"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 71%, #404040 81%);    
+}
+input.sheet-Mana-bar[value="72"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 72%, #404040 82%);    
+}
+input.sheet-Mana-bar[value="73"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 73%, #404040 83%);    
+}
+input.sheet-Mana-bar[value="74"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 74%, #404040 84%);    
+}
+input.sheet-Mana-bar[value="75"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 75%, #404040 85%);    
+}
+input.sheet-Mana-bar[value="76"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 76%, #404040 86%);    
+}
+input.sheet-Mana-bar[value="77"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 77%, #404040 87%);    
+}
+input.sheet-Mana-bar[value="78"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 78%, #404040 88%);    
+}
+input.sheet-Mana-bar[value="79"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 79%, #404040 89%);    
+}
+input.sheet-Mana-bar[value="80"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 80%, #404040 90%);  
+}
+input.sheet-Mana-bar[value="81"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 81%, #404040 91%);    
+}
+input.sheet-Mana-bar[value="82"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 82%, #404040 92%);    
+}
+input.sheet-Mana-bar[value="83"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 83%, #404040 93%);    
+}
+input.sheet-Mana-bar[value="84"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 84%, #404040 94%);    
+}
+input.sheet-Mana-bar[value="85"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 85%, #404040 95%);    
+}
+input.sheet-Mana-bar[value="86"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 86%, #404040 96%);    
+}
+input.sheet-Mana-bar[value="87"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 87%, #404040 97%);    
+}
+input.sheet-Mana-bar[value="88"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 88%, #404040 98%);    
+}
+input.sheet-Mana-bar[value="89"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 89%, #404040 99%);    
+}
+input.sheet-Mana-bar[value="90"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 90%, #404040 100%);  
+}
+input.sheet-Mana-bar[value="91"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 91%, #404040 101%);    
+}
+input.sheet-Mana-bar[value="92"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 92%, #404040 102%);    
+}
+input.sheet-Mana-bar[value="93"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 93%, #404040 103%);    
+}
+input.sheet-Mana-bar[value="94"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 94%, #404040 104%);    
+}
+input.sheet-Mana-bar[value="95"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 95%, #404040 105%);    
+}
+input.sheet-Mana-bar[value="96"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 96%, #404040 106%);    
+}
+input.sheet-Mana-bar[value="97"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 97%, #404040 107%);    
+}
+input.sheet-Mana-bar[value="98"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 98%, #404040 108%);    
+}
+input.sheet-Mana-bar[value="99"] ~ div.sheet-Mana-bar {
+    background: linear-gradient(to right, #00008b 99%, #404040 109%);    
+}
+input.sheet-Mana-bar[value="100"] ~ div.sheet-Mana-bar {
+    background: #00008b;
+    color: #404040;
+}
+input.sheet-Stamina-bar[value="0"] ~ div.sheet-Stamina-bar {
+    background: #404040;
+}
+input.sheet-Stamina-bar[value="1"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 1%, #404040 11%);    
+}
+input.sheet-Stamina-bar[value="2"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 2%, #404040 12%);    
+}
+input.sheet-Stamina-bar[value="3"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 3%, #404040 13%);    
+}
+input.sheet-Stamina-bar[value="4"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 4%, #404040 14%);    
+}
+input.sheet-Stamina-bar[value="5"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 5%, #404040 15%);    
+}
+input.sheet-Stamina-bar[value="6"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 6%, #404040 16%);    
+}
+input.sheet-Stamina-bar[value="7"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 7%, #404040 17%);    
+}
+input.sheet-Stamina-bar[value="8"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 8%, #404040 18%);    
+}
+input.sheet-Stamina-bar[value="9"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 9%, #404040 19%);    
+}
+input.sheet-Stamina-bar[value="10"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 10%, #404040 20%);    
+}
+input.sheet-Stamina-bar[value="11"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 11%, #404040 21%);    
+}
+input.sheet-Stamina-bar[value="12"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 12%, #404040 22%);    
+}
+input.sheet-Stamina-bar[value="13"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 13%, #404040 23%);    
+}
+input.sheet-Stamina-bar[value="14"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 14%, #404040 24%);    
+}
+input.sheet-Stamina-bar[value="15"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 15%, #404040 25%);    
+}
+input.sheet-Stamina-bar[value="16"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 16%, #404040 26%);    
+}
+input.sheet-Stamina-bar[value="17"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 17%, #404040 27%);    
+}
+input.sheet-Stamina-bar[value="18"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 18%, #404040 28%);    
+}
+input.sheet-Stamina-bar[value="19"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 19%, #404040 29%);    
+}
+input.sheet-Stamina-bar[value="20"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 20%, #404040 30%);  
+}
+input.sheet-Stamina-bar[value="21"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 21%, #404040 31%);    
+}
+input.sheet-Stamina-bar[value="22"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 22%, #404040 32%);    
+}
+input.sheet-Stamina-bar[value="23"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 23%, #404040 33%);    
+}
+input.sheet-Stamina-bar[value="24"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 24%, #404040 34%);    
+}
+input.sheet-Stamina-bar[value="25"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 25%, #404040 35%);    
+}
+input.sheet-Stamina-bar[value="26"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 26%, #404040 36%);    
+}
+input.sheet-Stamina-bar[value="27"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 27%, #404040 37%);    
+}
+input.sheet-Stamina-bar[value="28"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 28%, #404040 38%);    
+}
+input.sheet-Stamina-bar[value="29"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 29%, #404040 39%);    
+}
+input.sheet-Stamina-bar[value="30"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 30%, #404040 40%);  
+}
+input.sheet-Stamina-bar[value="31"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 31%, #404040 41%);    
+}
+input.sheet-Stamina-bar[value="32"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 32%, #404040 42%);    
+}
+input.sheet-Stamina-bar[value="33"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 33%, #404040 43%);    
+}
+input.sheet-Stamina-bar[value="34"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 34%, #404040 44%);    
+}
+input.sheet-Stamina-bar[value="35"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 35%, #404040 45%);    
+}
+input.sheet-Stamina-bar[value="36"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 36%, #404040 46%);    
+}
+input.sheet-Stamina-bar[value="37"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 37%, #404040 47%);    
+}
+input.sheet-Stamina-bar[value="38"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 38%, #404040 48%);    
+}
+input.sheet-Stamina-bar[value="39"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 39%, #404040 49%);    
+}
+input.sheet-Stamina-bar[value="40"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 40%, #404040 50%);  
+}
+input.sheet-Stamina-bar[value="41"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 41%, #404040 51%);    
+}
+input.sheet-Stamina-bar[value="42"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 42%, #404040 52%);    
+}
+input.sheet-Stamina-bar[value="43"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 43%, #404040 53%);    
+}
+input.sheet-Stamina-bar[value="44"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 44%, #404040 54%);    
+}
+input.sheet-Stamina-bar[value="45"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 45%, #404040 55%);    
+}
+input.sheet-Stamina-bar[value="46"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 46%, #404040 56%);    
+}
+input.sheet-Stamina-bar[value="47"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 47%, #404040 57%);    
+}
+input.sheet-Stamina-bar[value="48"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 48%, #404040 58%);    
+}
+input.sheet-Stamina-bar[value="49"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 49%, #404040 59%);    
+}
+input.sheet-Stamina-bar[value="50"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 50%, #404040 60%);  
+}
+input.sheet-Stamina-bar[value="51"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 51%, #404040 61%);    
+}
+input.sheet-Stamina-bar[value="52"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 52%, #404040 62%);    
+}
+input.sheet-Stamina-bar[value="53"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 53%, #404040 63%);    
+}
+input.sheet-Stamina-bar[value="54"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 54%, #404040 64%);    
+}
+input.sheet-Stamina-bar[value="55"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 55%, #404040 65%);    
+}
+input.sheet-Stamina-bar[value="56"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 56%, #404040 66%);    
+}
+input.sheet-Stamina-bar[value="57"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 57%, #404040 67%);    
+}
+input.sheet-Stamina-bar[value="58"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 58%, #404040 68%);    
+}
+input.sheet-Stamina-bar[value="59"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 59%, #404040 69%);    
+}
+input.sheet-Stamina-bar[value="60"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 60%, #404040 70%);  
+}
+input.sheet-Stamina-bar[value="61"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 61%, #404040 71%);    
+}
+input.sheet-Stamina-bar[value="62"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 62%, #404040 72%);    
+}
+input.sheet-Stamina-bar[value="63"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 63%, #404040 73%);    
+}
+input.sheet-Stamina-bar[value="64"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 64%, #404040 74%);    
+}
+input.sheet-Stamina-bar[value="65"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 65%, #404040 75%);    
+}
+input.sheet-Stamina-bar[value="66"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 66%, #404040 76%);    
+}
+input.sheet-Stamina-bar[value="67"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 67%, #404040 77%);    
+}
+input.sheet-Stamina-bar[value="68"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 68%, #404040 78%);    
+}
+input.sheet-Stamina-bar[value="69"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 69%, #404040 79%);    
+}
+input.sheet-Stamina-bar[value="70"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 70%, #404040 80%);  
+}
+input.sheet-Stamina-bar[value="71"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 71%, #404040 81%);    
+}
+input.sheet-Stamina-bar[value="72"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 72%, #404040 82%);    
+}
+input.sheet-Stamina-bar[value="73"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 73%, #404040 83%);    
+}
+input.sheet-Stamina-bar[value="74"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 74%, #404040 84%);    
+}
+input.sheet-Stamina-bar[value="75"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 75%, #404040 85%);    
+}
+input.sheet-Stamina-bar[value="76"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 76%, #404040 86%);    
+}
+input.sheet-Stamina-bar[value="77"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 77%, #404040 87%);    
+}
+input.sheet-Stamina-bar[value="78"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 78%, #404040 88%);    
+}
+input.sheet-Stamina-bar[value="79"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 79%, #404040 89%);    
+}
+input.sheet-Stamina-bar[value="80"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 80%, #404040 90%);  
+}
+input.sheet-Stamina-bar[value="81"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 81%, #404040 91%);    
+}
+input.sheet-Stamina-bar[value="82"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 82%, #404040 92%);    
+}
+input.sheet-Stamina-bar[value="83"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 83%, #404040 93%);    
+}
+input.sheet-Stamina-bar[value="84"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 84%, #404040 94%);    
+}
+input.sheet-Stamina-bar[value="85"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 85%, #404040 95%);    
+}
+input.sheet-Stamina-bar[value="86"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 86%, #404040 96%);    
+}
+input.sheet-Stamina-bar[value="87"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 87%, #404040 97%);    
+}
+input.sheet-Stamina-bar[value="88"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 88%, #404040 98%);    
+}
+input.sheet-Stamina-bar[value="89"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 89%, #404040 99%);    
+}
+input.sheet-Stamina-bar[value="90"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 90%, #404040 100%);  
+}
+input.sheet-Stamina-bar[value="91"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 91%, #404040 101%);    
+}
+input.sheet-Stamina-bar[value="92"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 92%, #404040 102%);    
+}
+input.sheet-Stamina-bar[value="93"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 93%, #404040 103%);    
+}
+input.sheet-Stamina-bar[value="94"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 94%, #404040 104%);    
+}
+input.sheet-Stamina-bar[value="95"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 95%, #404040 105%);    
+}
+input.sheet-Stamina-bar[value="96"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 96%, #404040 106%);    
+}
+input.sheet-Stamina-bar[value="97"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 97%, #404040 107%);    
+}
+input.sheet-Stamina-bar[value="98"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 98%, #404040 108%);    
+}
+input.sheet-Stamina-bar[value="99"] ~ div.sheet-Stamina-bar {
+    background: linear-gradient(to right, yellow 99%, #404040 109%);    
+}
+input.sheet-Stamina-bar[value="100"] ~ div.sheet-Stamina-bar {
+    background: yellow;
+    color: #404040;
+}
+   
+/*------------------------ Quirk TAB CODES ------------------------*/
+.sheet-quirktext {
+    width:200px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 20px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-quirk-points {
+    width: 825px;
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    border-color: #000000;
+    text-align: center;
+    font-size:50px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+}
+.sheet-quirk-level{
+    width: 52px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 24px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-quirknumber {
+    background: none;
+    border: 2px solid black;
+    box-shadow: none;
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-quirkselect {
+    height: 60px;
+    width: 100%;
+    font-size: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align-last: center;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+    margin:0;
+}
+.sheet-quirktypeselect {
+    height: 30px;
+    width: 100%;
+    font-size: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align-last: center;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+    margin:0;
+}
+.sheet-quirkarea {
+    width:100%;
+    height: 40px;
+    padding:0;
+    margin:0;
+}
+
+/*----------SKILL Tab-----------*/
+
+.sheet-skillselect {
+    height: 90px;
+    width: 100%;
+    font-size: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align-last: center;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+    margin:0;
+}
+.sheet-skilltypeselect {
+    height: 60px;
+    width: 100%;
+    font-size: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align-last: center;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+    margin:0;
+}
+.sheet-skillarea {
+    width:100%;
+    height: 80px;
+    padding:0;
+    margin:0;
+}
+.sheet-xp {
+    width: 148px !important;
+    text-align: center;
+}
+.sheet-skill-level {
+    width: 210px !important;
+    text-align: center;
+}
+
+/*----------INVENTORY TAB-----------*/
+
+
+.sheet-weight {
+    width: 412.5px !important;
+    text-align:center;
+    font-size:25px;
+}
+.sheet-weight::-webkit-inner-spin-button {
+    display: none;
+}
+.sheet-item-amount {
+    width: 90px !important;
+    height:45px !important;
+    text-align: center;
+    font-size: 25px;
+}
+.sheet-item-amount::-webkit-inner-spin-button  {
+    display: none;
+}
+.sheet-item-weight {
+    width: 70px !important;
+    text-align: right;
+}
+.sheet-item-weight::-webkit-inner-spin-button  {
+    display: none;
+}
+.sheet-item-total-weight {
+    width: 75px !important;
+    text-align: right;
+}
+.sheet-item-total-weight::-webkit-inner-spin-button  {
+    display: none;
+}
+.sheet-itemselect {
+    height: 93px;
+    width: 100%;
+    font-size: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align-last: center;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+    margin:0;
+}
+.sheet-itemtypeselect {
+    height: 45px;
+    width: 90px;
+    font-size: 15px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align-last: center;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding:0;
+    margin:0;
+}
+.sheet-itemtext {
+    line-height: 45px;
+    width: 100%;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 20px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    padding:0;
+}
+.sheet-itemarea {
+    width: 100%;
+    height: 87px;
+    padding:0;
+    margin:0;
+}
+
+.sheet-ini {
+    width: 100% !important;
+    text-align: center;
+    font-family: Lucida Handwriting;
+    float: right;
+}
+
+.sheet-numtwo {
+    width: 100% !important;
+    height: 101% !important;
+    text-align: center;
+    font-family: Lucida Handwriting;
+} 
+/*---------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------MY CSS---------------*/
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
+/* Google Fonts */
+
+/* No class */
+input {
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+    box-shadow: none;
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    box-sizing: border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1e1;
+}
+::-webkit-scrollbar-thumb {
+    background: #5555555d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #888888d2;
+}
+/* No class */
+
+
+
+/* Containers */
+.sheet-container {
+    display: grid;
+    grid-template-columns: auto;
+    border: solid 2px black;
+    box-sizing: border-box;
+}
+.sheet-outer {
+    border: solid 20px black;
+    padding: 5px;
+    padding-top: 15px;
+}
+.sheet-inner {
+    grid-template-columns: 14% 5% 11% 6% 4% 4% 40% 10% 6%;
+    border: none;
+}
+.sheet-header {
+    grid-template-columns: 14% 16% 6% 8% 40% 10% 6%;
+    border: none;
+}
+/* Containers */
+
+/** Grid **/
+/* Grid-Header */
+.sheet-th {
+    border: 1px solid black;
+    background-color: black;
+    font-weight: none;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.sheet-th:not(:first-child){
+    border-left-color: white;
+}
+/* Grid-Header */
+
+/* Grid-Colspan */
+.sheet-colspan9 {
+    grid-column-end: span 9;
+}
+/* Grid-Colspan */
+
+/* Grid-Border */
+.sheet-borderall {
+    border: 2px solid black;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* Grid-Border */
+
+/* Grid-Elements */
+.sheet-element.sheet-element.sheet-element {
+    width: 95%;
+    box-sizing: border-box;
+}
+.sheet-element.sheet-element.sheet-element:not(:first-child) {
+    padding-left: 3px;
+}
+.sheet-item {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+/* Grid-Elements/Items */
+/** Grid **/
+
+/*** Spell-Specifics ***/
+.sheet-Spell_attribute{
+    background: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+    box-shadow: none;
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+    font-family: Lucida Handwriting;
+    -webkit-appearance: none;
+    padding: 0px;
+}
+
+.sheet-Spell_details {
+    font-size: 32px;
+    font-family: 'Marck Script', cursive;
+    color: #000000;
+    line-height: 1.1;
+    height: 3.65em;
+    text-align: center;
+    margin: 0px;
+    overflow-y: auto;
+    resize: none;
+    border-bottom: solid 7.5px black;
+}
+/*** Spell specifics ***/
