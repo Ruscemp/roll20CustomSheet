@@ -40,6 +40,37 @@ textarea {
     cursor: auto;
     margin: 0px;
 }
+.sheet-StatName {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+}
+button[type=roll].sheet-AttrRoll {
+    background: linear-gradient(black, white 25%, white 70%, black);
+    border: 0px;
+    box-shadow: none;
+    height: 60px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0px;
+}
+button[type=roll].sheet-AttrRoll::before {
+    font-size: 1em;
+    content: none !important;
+}
+button[type=roll].sheet-AttrRoll:hover {
+    background: radial-gradient(white  60%, grey 88.75%, black 100%);
+    border: 0px;
+    box-shadow: none;
+}
+button[type=roll].sheet-AttrRoll:hover::after{
+    font-size: 3em;
+    content: "0" !important;
+    font-family: 'dicefontd20', cursive !important;
+    position: relative;
+    bottom: 55px;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -203,15 +234,24 @@ input.sheet-tab:checked::before {
 .sheet-Status {
     height: 56px;
 }
+.sheet-2col {
+    grid-template-columns: 50% 50%;
+}
 .sheet-3col {
     grid-template-columns: 33.33% 33.33% 33.33%;
     grid-template-columns: calc(100% /3) calc(100% /3) calc(100% /3);
+}
+.sheet-3colStats {
+    grid-template-columns: 27.5% 37.5% 20% 15%;
 }
 .sheet-StatusPoints {
     margin-top: 0px !important;
 }
 .sheet-stats {
     grid-template-columns: 32% 2% 32% 2% 32%;
+}
+.sheet-attackHeader {
+    grid-template-columns: 20% 16% 11% 53%;
 }
 /* Containers */
 
@@ -307,6 +347,11 @@ input.sheet-tab:checked::before {
     background-color: white;
     color: black;
 }
+.sheet-WhiteBorder {
+    border-bottom: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
 /* Bars */
 .sheet-StatusBarName {
@@ -317,14 +362,18 @@ input.sheet-tab:checked::before {
     border-top-right-radius: 60px;
 }
 .sheet-bar {
-    width: 95%;
-    margin-left: 2.5%;
+    width: 97.5%;
     margin-right: 2.5%;
     height: 25px;
     border: 1px solid black;
     color: black;
     text-align: center;
     border-radius: 25px;
+}
+.sheet-vertical {
+    height: 95%;
+    position: relative;
+    top: 3.5%;
 }
 .sheet-Status_bar{
     width: 45.5% !important;
@@ -350,6 +399,10 @@ input.sheet-tab:checked::before {
 }
 .sheet-Status_bar_right {
     text-align: left;
+}
+.sheet-xp_bar {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 /* HP Bar */
@@ -1267,6 +1320,310 @@ input.sheet-PS_bar[value="100"] ~ div.sheet-PS_bar {
     background: #57e7c3;
     color: #404040;
 }
+input.sheet-xp_bar[value="0"] ~ div.sheet-xp_bar {
+    background: #404040;
+}
+input.sheet-xp_bar[value="1"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 1%, #404040 6%);    
+}
+input.sheet-xp_bar[value="2"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 2%, #404040 7%);    
+}
+input.sheet-xp_bar[value="3"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 3%, #404040 8%);    
+}
+input.sheet-xp_bar[value="4"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 4%, #404040 9%);    
+}
+input.sheet-xp_bar[value="5"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 5%, #404040 10%);    
+}
+input.sheet-xp_bar[value="6"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 6%, #404040 11%);    
+}
+input.sheet-xp_bar[value="7"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 7%, #404040 12%);    
+}
+input.sheet-xp_bar[value="8"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 8%, #404040 13%);    
+}
+input.sheet-xp_bar[value="9"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 9%, #404040 14%);    
+}
+input.sheet-xp_bar[value="10"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 10%, #404040 15%);    
+}
+input.sheet-xp_bar[value="11"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 11%, #404040 16%);    
+}
+input.sheet-xp_bar[value="12"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 12%, #404040 17%);    
+}
+input.sheet-xp_bar[value="13"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 13%, #404040 18%);    
+}
+input.sheet-xp_bar[value="14"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 14%, #404040 19%);    
+}
+input.sheet-xp_bar[value="15"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 15%, #404040 20%);    
+}
+input.sheet-xp_bar[value="16"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 16%, #404040 21%);    
+}
+input.sheet-xp_bar[value="17"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 17%, #404040 22%);    
+}
+input.sheet-xp_bar[value="18"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 18%, #404040 23%);    
+}
+input.sheet-xp_bar[value="19"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 19%, #404040 24%);    
+}
+input.sheet-xp_bar[value="20"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 20%, #404040 25%);  
+}
+input.sheet-xp_bar[value="21"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 21%, #404040 26%);    
+}
+input.sheet-xp_bar[value="22"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 22%, #404040 27%);    
+}
+input.sheet-xp_bar[value="23"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 23%, #404040 28%);    
+}
+input.sheet-xp_bar[value="24"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 24%, #404040 29%);    
+}
+input.sheet-xp_bar[value="25"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 25%, #404040 30%);    
+}
+input.sheet-xp_bar[value="26"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 26%, #404040 31%);    
+}
+input.sheet-xp_bar[value="27"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 27%, #404040 32%);    
+}
+input.sheet-xp_bar[value="28"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 28%, #404040 33%);    
+}
+input.sheet-xp_bar[value="29"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 29%, #404040 34%);    
+}
+input.sheet-xp_bar[value="30"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 30%, #404040 35%);  
+}
+input.sheet-xp_bar[value="31"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 31%, #404040 36%);    
+}
+input.sheet-xp_bar[value="32"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 32%, #404040 37%);    
+}
+input.sheet-xp_bar[value="33"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 33%, #404040 38%);    
+}
+input.sheet-xp_bar[value="34"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 34%, #404040 39%);    
+}
+input.sheet-xp_bar[value="35"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 35%, #404040 40%);    
+}
+input.sheet-xp_bar[value="36"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 36%, #404040 41%);    
+}
+input.sheet-xp_bar[value="37"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 37%, #404040 42%);    
+}
+input.sheet-xp_bar[value="38"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 38%, #404040 43%);    
+}
+input.sheet-xp_bar[value="39"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 39%, #404040 44%);    
+}
+input.sheet-xp_bar[value="40"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 40%, #404040 45%);  
+}
+input.sheet-xp_bar[value="41"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 41%, #404040 46%);    
+}
+input.sheet-xp_bar[value="42"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 42%, #404040 47%);    
+}
+input.sheet-xp_bar[value="43"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 43%, #404040 48%);    
+}
+input.sheet-xp_bar[value="44"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 44%, #404040 49%);    
+}
+input.sheet-xp_bar[value="45"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 45%, #404040 50%);    
+}
+input.sheet-xp_bar[value="46"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 46%, #404040 51%);    
+}
+input.sheet-xp_bar[value="47"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 47%, #404040 52%);    
+}
+input.sheet-xp_bar[value="48"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 48%, #404040 53%);    
+}
+input.sheet-xp_bar[value="49"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 49%, #404040 54%);    
+}
+input.sheet-xp_bar[value="50"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 50%, #404040 55%);  
+}
+input.sheet-xp_bar[value="51"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 51%, #404040 56%);    
+}
+input.sheet-xp_bar[value="52"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 52%, #404040 57%);    
+}
+input.sheet-xp_bar[value="53"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 53%, #404040 58%);    
+}
+input.sheet-xp_bar[value="54"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 54%, #404040 59%);    
+}
+input.sheet-xp_bar[value="55"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 55%, #404040 60%);    
+}
+input.sheet-xp_bar[value="56"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 56%, #404040 61%);    
+}
+input.sheet-xp_bar[value="57"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 57%, #404040 62%);    
+}
+input.sheet-xp_bar[value="58"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 58%, #404040 63%);    
+}
+input.sheet-xp_bar[value="59"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 59%, #404040 64%);    
+}
+input.sheet-xp_bar[value="60"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 60%, #404040 65%);  
+}
+input.sheet-xp_bar[value="61"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 61%, #404040 66%);    
+}
+input.sheet-xp_bar[value="62"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 62%, #404040 67%);    
+}
+input.sheet-xp_bar[value="63"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 63%, #404040 68%);    
+}
+input.sheet-xp_bar[value="64"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 64%, #404040 69%);    
+}
+input.sheet-xp_bar[value="65"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 65%, #404040 70%);    
+}
+input.sheet-xp_bar[value="66"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 66%, #404040 71%);    
+}
+input.sheet-xp_bar[value="67"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 67%, #404040 72%);    
+}
+input.sheet-xp_bar[value="68"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 68%, #404040 73%);    
+}
+input.sheet-xp_bar[value="69"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 69%, #404040 74%);    
+}
+input.sheet-xp_bar[value="70"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 70%, #404040 75%);  
+}
+input.sheet-xp_bar[value="71"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 71%, #404040 76%);    
+}
+input.sheet-xp_bar[value="72"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 72%, #404040 77%);    
+}
+input.sheet-xp_bar[value="73"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 73%, #404040 78%);    
+}
+input.sheet-xp_bar[value="74"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 74%, #404040 79%);    
+}
+input.sheet-xp_bar[value="75"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 75%, #404040 80%);    
+}
+input.sheet-xp_bar[value="76"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 76%, #404040 81%);    
+}
+input.sheet-xp_bar[value="77"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 77%, #404040 82%);    
+}
+input.sheet-xp_bar[value="78"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 78%, #404040 83%);    
+}
+input.sheet-xp_bar[value="79"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 79%, #404040 84%);    
+}
+input.sheet-xp_bar[value="80"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 80%, #404040 85%);  
+}
+input.sheet-xp_bar[value="81"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 81%, #404040 86%);    
+}
+input.sheet-xp_bar[value="82"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 82%, #404040 87%);    
+}
+input.sheet-xp_bar[value="83"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 83%, #404040 88%);    
+}
+input.sheet-xp_bar[value="84"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 84%, #404040 89%);    
+}
+input.sheet-xp_bar[value="85"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 85%, #404040 90%);    
+}
+input.sheet-xp_bar[value="86"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 86%, #404040 91%);    
+}
+input.sheet-xp_bar[value="87"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 87%, #404040 92%);    
+}
+input.sheet-xp_bar[value="88"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 88%, #404040 93%);    
+}
+input.sheet-xp_bar[value="89"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 89%, #404040 94%);    
+}
+input.sheet-xp_bar[value="90"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 90%, #404040 95%);  
+}
+input.sheet-xp_bar[value="91"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 91%, #404040 96%);    
+}
+input.sheet-xp_bar[value="92"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 92%, #404040 97%);    
+}
+input.sheet-xp_bar[value="93"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 93%, #404040 98%);    
+}
+input.sheet-xp_bar[value="94"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 94%, #404040 99%);    
+}
+input.sheet-xp_bar[value="95"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 95%, #404040 100%);    
+}
+input.sheet-xp_bar[value="96"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 96%, #404040 101%);    
+}
+input.sheet-xp_bar[value="97"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 97%, #404040 102%);    
+}
+input.sheet-xp_bar[value="98"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 98%, #404040 103%);    
+}
+input.sheet-xp_bar[value="99"] ~ div.sheet-xp_bar {
+    background: linear-gradient(to top, darkviolet 99%, #404040 104%);    
+}
+input.sheet-xp_bar[value="100"] ~ div.sheet-xp_bar {
+    background: darkviolet;
+    color: #404040;
+}
 input.sheet-ST_bar[value="0"] ~ div.sheet-ST_bar {
     background: #404040;
 }
@@ -1571,4 +1928,3 @@ input.sheet-ST_bar[value="100"] ~ div.sheet-ST_bar {
     background: yellow;
     color: #404040;
 }
-   
